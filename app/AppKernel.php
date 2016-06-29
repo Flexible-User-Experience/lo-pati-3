@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             // vendors
+            new Hautelook\AliceBundle\HautelookAliceBundle(),
             // app
             new AppBundle\AppBundle(),
         );
