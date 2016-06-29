@@ -2,26 +2,40 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
-class Setting
+/**
+ * Class Setting
+ * 
+ * @category Entity
+ * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @package  AppBundle\Entity
+ * 
+ * @ORM\Table()
+ */
+class Setting extends AbstractBase
 {
     /**
      * @var string
+     * @ORM\Column(type="text", length=4000, nullable=true)
      */
     private $address;
 
     /**
      * @var string
+     * @ORM\Column(type="text", length=4000, nullable=true)
      */
     private $timetable;
 
     /**
      * @var string
+     * @ORM\Column(type="text", length=4000, nullable=true)
      */
     private $organizer;
 
     /**
      * @var string
+     * @ORM\Column(type="text", length=4000, nullable=true)
      */
     private $collaborator;
 
