@@ -12,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @package  AppBundle\Entity
  * 
  * @ORM\Table()
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\SettingRepository")
  */
 class Setting extends AbstractBase
 {
