@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use AppBundle\Entity\Traits\DescriptionTrait;
 use AppBundle\Entity\Traits\NameTrait;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -183,6 +184,13 @@ class Page extends AbstractBase
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $endDate;
+
+    /**
+     * @var ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="PageImage", mappedBy="page")
+     */
+    private $pageImages;
 
     /**
      *
@@ -648,6 +656,25 @@ class Page extends AbstractBase
     {
         $this->endDate = $endDate;
 
+        return $this;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getPageImages()
+    {
+        return $this->pageImages;
+    }
+
+    /**
+     * @param ArrayCollection $pageImages
+     *
+     * @return Page
+     */
+    public function setPageImages(ArrayCollection $pageImages)
+    {
+        $this->pageImages = $pageImages;
         return $this;
     }
 }
