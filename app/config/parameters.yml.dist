@@ -22,3 +22,4 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     project_web_title: "Lo Pati3"
+    locale: ca
