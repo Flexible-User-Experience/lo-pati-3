@@ -2,6 +2,8 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Entity\Traits\DescriptionTrait;
+use AppBundle\Entity\Traits\NameTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -16,6 +18,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class SliderImage extends AbstractBase
 {
+    use NameTrait;
+    use DescriptionTrait;
+    
     /**
      * @var string
      * @ORM\Column(type="string", length=255, nullable=true)
