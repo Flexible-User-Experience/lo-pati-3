@@ -12,3 +12,14 @@ AppBundle\Entity\WorkingDaySetting:
     weekdayNumber: <current()>
     name: <dayOfWeek()>
     enabled: <boolean(90)>
+
+# SliderImage
+AppBundle\Entity\SliderImage:
+  sliderImage{1..20}:
+    name: <name()>
+    altName: <name()>
+    description: <sentence(10)>
+    link: <url()>
+    position: <current()>
+    enabled: <boolean(90)>
+    image: <name()>
