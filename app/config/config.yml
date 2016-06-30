@@ -29,6 +29,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form_themes:
+        - "SonataCoreBundle:Form:datepicker.html.twig"
     globals:
         admin_tag_version:        "v0.0.01"
 

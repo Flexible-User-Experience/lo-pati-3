@@ -23,3 +23,6 @@ parameters:
 
     project_web_title: "Lo Pati3"
     locale: ca
+
+    private_admin_test_user: admin
+    private_admin_test_pass: admin
