@@ -17,14 +17,15 @@
         </tr>
         </thead>
         <tbody>
-        {#{% for triangle in triangleList %}
+        {% for setting in settingsList %}
             <tr>
-                <td>{{ loop.index }}</td>
-                <td>{{ triangle.height }}</td>
-                <td>{{ triangle.length }}</td>
-                <td>{{ triangle.calculateArea }}</td>
+                <td>{{ setting.id }}</td>
+                <td>{{ setting.address }}</td>
+                <td>{{ setting.timetable }}</td>
+                <td>{{ setting.organizer }}</td>
+                <td>{{ setting.collaborator }}</td>
             </tr>
-        {% endfor %}#}
+        {% endfor %}
         </tbody>
     </table>
 

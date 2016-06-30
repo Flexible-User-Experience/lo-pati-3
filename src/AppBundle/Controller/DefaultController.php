@@ -24,9 +24,11 @@ class DefaultController extends Controller
      */
     public function settingsListAction(Request $request)
     {
+        $settingsList = $this->getDoctrine()->getRepository('AppBundle:Setting')->findAll();
+        
         // replace this example code with whatever you need
         return $this->render('default/settings_list.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
+            'settingsList' => $settingsList,
         ));
     }
 }
