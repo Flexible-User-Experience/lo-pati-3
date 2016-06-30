@@ -18,22 +18,25 @@ class SliderImage extends AbstractBase
 {
     /**
      * @var string
-     * @ORM\Column(type="text", length=4000, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $altName;
+
     /**
      * @var string
-     * @ORM\Column(type="text", length=4000, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $link;
+
     /**
-     * @var string
+     * @var integer
      * @ORM\Column(type="integer")
      */
     private $position;
+
     /**
      * @var string
-     * @ORM\Column(type="text", length=4000, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $image;
 
@@ -86,7 +89,7 @@ class SliderImage extends AbstractBase
     }
 
     /**
-     * @return string
+     * @return integer
      */
     public function getPosition()
     {
@@ -94,7 +97,7 @@ class SliderImage extends AbstractBase
     }
 
     /**
-     * @param string $position
+     * @param integer $position
      *
      * @return SliderImage
      */
@@ -124,6 +127,4 @@ class SliderImage extends AbstractBase
 
         return $this;
     }
-
 }
-
