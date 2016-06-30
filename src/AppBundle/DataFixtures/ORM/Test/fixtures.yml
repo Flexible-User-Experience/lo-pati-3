@@ -1,6 +1,14 @@
+# Setting
+AppBundle\Entity\Setting:
+  setting{1..3}:
+    address: <streetAddress()>
+    timetable: <iso8601()>
+    organizer: <name()>
+    collaborator: <name()>
+
 # Page
 AppBundle\Entity\Page:
-  page{1..10}:
+  page{1..2}:
     name: <name()>
     description: <sentence()>
     type: <word()>
@@ -26,30 +34,3 @@ AppBundle\Entity\Page:
     smallImageName2: <word()>
     startDate: <dateTimeThisMonth($max = 'now')>
     endDate: <dateTimeThisMonth($max = 'now')>
-
-# Setting
-AppBundle\Entity\Setting:
-  setting{1..100}:
-    address: <streetAddress()>
-    timetable: <iso8601()>
-    organizer: <name()>
-    collaborator: <name()>
-
-# WorkingDaySetting
-AppBundle\Entity\WorkingDaySetting:
-  workingDaySetting{1..7}:
-    weekdayNumber: <current()>
-    name: <dayOfWeek()>
-    enabled: <boolean(90)>
-
-# SliderImage
-AppBundle\Entity\SliderImage:
-  sliderImage{1..20}:
-    name: <name()>
-    altName: <name()>
-    description: <sentence(10)>
-    link: <url()>
-    position: <current()>
-    enabled: <boolean(90)>
-    image: <name()>
-
