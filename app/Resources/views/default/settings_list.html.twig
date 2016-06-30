@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Setting List
+{% endblock %}
+
+{% block body %}
+    <h1>Settings List</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Address</th>
+            <th>Timetable</th>
+            <th>Organizer</th>
+            <th>Collaborator</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for setting in settingsList %}
+            <tr>
+                <td>{{ setting.id }}</td>
+                <td>{{ setting.address }}</td>
+                <td>{{ setting.timetable }}</td>
+                <td>{{ setting.organizer }}</td>
+                <td>{{ setting.collaborator }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-info" href="{{ path("new_setting") }}">Go to New Setting</a>
+{% endblock %}

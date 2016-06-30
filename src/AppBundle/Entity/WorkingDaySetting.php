@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Entity\Traits\NameTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -16,6 +17,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class WorkingDaySetting extends AbstractBase
 {
+    use NameTrait;
+    
     /**
      * @var integer
      * @ORM\Column(type="integer")
