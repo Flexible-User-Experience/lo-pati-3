@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Setting List
+{% endblock %}
+
+{% block body %}
+    <h1>Settings List</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Address</th>
+            <th>Timetable</th>
+            <th>Organizer</th>
+            <th>Collaborator</th>
+        </tr>
+        </thead>
+        <tbody>
+        {#{% for triangle in triangleList %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ triangle.height }}</td>
+                <td>{{ triangle.length }}</td>
+                <td>{{ triangle.calculateArea }}</td>
+            </tr>
+        {% endfor %}#}
+        </tbody>
+    </table>
+
+
+{% endblock %}

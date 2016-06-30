@@ -18,4 +18,15 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
         ));
     }
+
+    /**
+     * @Route("/settings-list", name="settings_list")
+     */
+    public function settingsListAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/settings_list.html.twig', array(
+            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
+        ));
+    }
 }
