@@ -103,7 +103,7 @@ class PageAdmin extends AbstractBaseAdmin
             ->with('Controls', $this->getFormMdSuccessBoxArray(5))
             ->add(
                 'publishDate',
-                'sonata_type_date_picker',
+                'Sonata\CoreBundle\Form\Type\DatePickerType',
                 array(
                     'label'  => 'Data Publicació',
                     'format' => 'd/M/y',
@@ -111,7 +111,7 @@ class PageAdmin extends AbstractBaseAdmin
             )
             ->add(
                 'expirationDate',
-                'sonata_type_date_picker',
+                'Sonata\CoreBundle\Form\Type\DatePickerType',
                 array(
                     'label'  => 'Data Caducitat',
                     'format' => 'd/M/y',
@@ -214,7 +214,7 @@ class PageAdmin extends AbstractBaseAdmin
             )
             ->add(
                 'startDate',
-                'sonata_type_date_picker',
+                'Sonata\CoreBundle\Form\Type\DatePickerType',
                 array(
                     'label'  => 'Data Inicial',
                     'format' => 'd/M/y',
@@ -223,7 +223,7 @@ class PageAdmin extends AbstractBaseAdmin
             )
             ->add(
                 'endDate',
-                'sonata_type_date_picker',
+                'Sonata\CoreBundle\Form\Type\DatePickerType',
                 array(
                     'label'  => 'Data Final',
                     'format' => 'd/M/y',
