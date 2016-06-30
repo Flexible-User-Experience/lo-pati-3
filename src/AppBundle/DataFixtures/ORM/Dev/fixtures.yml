@@ -5,3 +5,10 @@ AppBundle\Entity\Setting:
     timetable: <iso8601()>
     organizer: <name()>
     collaborator: <name()>
+
+# WorkingDaySetting
+AppBundle\Entity\WorkingDaySetting:
+  workingDaySetting{1..7}:
+    weekdayNumber: <current()>
+    name: <dayOfWeek()>
+    enabled: <boolean(90)>
