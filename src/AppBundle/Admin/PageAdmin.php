@@ -6,6 +6,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
+use Sonata\CoreBundle\Form\Type\DatePickerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
@@ -103,7 +104,7 @@ class PageAdmin extends AbstractBaseAdmin
             ->with('Controls', $this->getFormMdSuccessBoxArray(5))
             ->add(
                 'publishDate',
-                'Sonata\CoreBundle\Form\Type\DatePickerType',
+                DatePickerType::class,
                 array(
                     'label'  => 'Data Publicació',
                     'format' => 'd/M/y',
@@ -111,7 +112,7 @@ class PageAdmin extends AbstractBaseAdmin
             )
             ->add(
                 'expirationDate',
-                'Sonata\CoreBundle\Form\Type\DatePickerType',
+                DatePickerType::class,
                 array(
                     'label'  => 'Data Caducitat',
                     'format' => 'd/M/y',
@@ -214,7 +215,7 @@ class PageAdmin extends AbstractBaseAdmin
             )
             ->add(
                 'startDate',
-                'Sonata\CoreBundle\Form\Type\DatePickerType',
+                DatePickerType::class,
                 array(
                     'label'  => 'Data Inicial',
                     'format' => 'd/M/y',
@@ -223,7 +224,7 @@ class PageAdmin extends AbstractBaseAdmin
             )
             ->add(
                 'endDate',
-                'Sonata\CoreBundle\Form\Type\DatePickerType',
+                DatePickerType::class,
                 array(
                     'label'  => 'Data Final',
                     'format' => 'd/M/y',
@@ -272,7 +273,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'doctrine_orm_date',
                 array(
                     'label'      => 'Data Publicació',
-                    'field_type' => 'sonata_type_date_picker',
+                    'field_type' =>  DatePickerType::class,
                 )
             )
             ->add(
@@ -280,7 +281,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'doctrine_orm_date',
                 array(
                     'label'      => 'Data Caducitat',
-                    'field_type' => 'sonata_type_date_picker',
+                    'field_type' =>  DatePickerType::class,
                 )
             )
             ->add(
@@ -309,7 +310,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'doctrine_orm_date',
                 array(
                     'label'      => 'Data Inicial',
-                    'field_type' => 'sonata_type_date_picker',
+                    'field_type' =>  DatePickerType::class,
                 )
             )
             ->add(
@@ -317,7 +318,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'doctrine_orm_date',
                 array(
                     'label'      => 'Data Final',
-                    'field_type' => 'sonata_type_date_picker',
+                    'field_type' =>  DatePickerType::class,
                 )
             )
         ;
