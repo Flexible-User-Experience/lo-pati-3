@@ -14,5 +14,11 @@ parameters:
     mailer_user:       ~
     mailer_password:   ~
 
+    path_java: /usr/bin/java
+    path_node: /usr/local/bin/node
+    path_node_modules: /Users/<USERNAME>/node_modules
+
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    project_web_title: "Lo Pati3"

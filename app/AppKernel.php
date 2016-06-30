@@ -16,8 +16,14 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            //Sonata
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             // vendors
             new Hautelook\AliceBundle\HautelookAliceBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             // app
             new AppBundle\AppBundle(),
         );
