@@ -1,0 +1,7 @@
+# Setting
+AppBundle\Entity\Setting:
+  setting{1..100}:
+    address: <streetAddress()>
+    timetable: <iso8601()>
+    organizer: <name()>
+    collaborator: <name()>
