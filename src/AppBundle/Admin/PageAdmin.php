@@ -102,14 +102,11 @@ class PageAdmin extends AbstractBaseAdmin
                 array(
                     'label'   => 'Accions',
                     'actions' => array(
-//                        'edit'   => array('template' => '::Admin/Buttons/list__action_edit_button.html.twig'),
-//                        'show'   => array('template' => '::Admin/Buttons/list__action_show_button.html.twig'),
-//                        'pdf'    => array('template' => '::Admin/Buttons/list__action_pdf_button.html.twig'),
-//                        'email'  => array('template' => '::Admin/Buttons/list__action_email_button.html.twig'),
-//                        'delete' => array('template' => '::Admin/Buttons/list__action_delete_button.html.twig'),
+                        'edit'   => array('template' => '::Admin/Buttons/list__action_edit_button.html.twig'),
+                        'show'   => array('template' => '::Admin/Buttons/list__action_show_button.html.twig'),
+                        'delete' => array('template' => '::Admin/Buttons/list__action_delete_button.html.twig'),
                     )
                 )
             );
     }
-
 }

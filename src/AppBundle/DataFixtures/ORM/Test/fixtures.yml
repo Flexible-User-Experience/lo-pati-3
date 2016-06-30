@@ -1,0 +1,36 @@
+# Setting
+AppBundle\Entity\Setting:
+  setting{1..3}:
+    address: <streetAddress()>
+    timetable: <iso8601()>
+    organizer: <name()>
+    collaborator: <name()>
+
+# Page
+AppBundle\Entity\Page:
+  page{1..2}:
+    name: <name()>
+    description: <sentence()>
+    type: <word()>
+    summary: <sentence()>
+    front: <boolean(75)>
+    publishDate: <dateTimeThisMonth($max = 'now')>
+    visibleDate: <boolean(25)>
+    expirationDate: <dateTimeThisMonth($max = 'now')>
+    realizationDate: <word()>
+    place: <city()>
+    links: <imageUrl()>
+    share: <boolean(75)>
+    video: <word()>
+    urlVimeo: <imageUrl()>
+    urlFlickr: <imageUrl()>
+    smallImageName1: <word()>
+    largeImageName: <word()>
+    largeFooterImage: <word()>
+    documentName1: <word()>
+    documentTitle1: <word(2)>
+    documentName2: <word()>
+    documentTitle2: <word(2)>
+    smallImageName2: <word()>
+    startDate: <dateTimeThisMonth($max = 'now')>
+    endDate: <dateTimeThisMonth($max = 'now')>
