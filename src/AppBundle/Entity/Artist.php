@@ -6,6 +6,7 @@ use AppBundle\Entity\Traits\DescriptionTrait;
 use AppBundle\Entity\Traits\Document1Trait;
 use AppBundle\Entity\Traits\Image1Trait;
 use AppBundle\Entity\Traits\Image2Trait;
+use AppBundle\Entity\Traits\LinkTrait;
 use AppBundle\Entity\Traits\NameTrait;
 use AppBundle\Entity\Traits\SummaryTrait;
 use AppBundle\Entity\Traits\YearTrait;
@@ -30,6 +31,7 @@ class Artist extends AbstractBase
     use Image1Trait;
     use Image2Trait;
     use Document1Trait;
+    use LinkTrait;
 
     /**
      * @var string
