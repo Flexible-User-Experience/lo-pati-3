@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Entity\Traits\DescriptionTrait;
+use AppBundle\Entity\Traits\LinkTrait;
 use AppBundle\Entity\Traits\NameTrait;
 use AppBundle\Entity\Traits\PositionTrait;
 use Doctrine\ORM\Mapping as ORM;
@@ -22,6 +23,7 @@ class SliderImage extends AbstractBase
     use NameTrait;
     use DescriptionTrait;
     use PositionTrait;
+    use LinkTrait;
     
     /**
      * @var string
