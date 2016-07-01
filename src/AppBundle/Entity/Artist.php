@@ -43,6 +43,24 @@ class Artist extends AbstractBase
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $category;
+    
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image3;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image4;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image5;
 
     /**
      *
@@ -88,6 +106,66 @@ class Artist extends AbstractBase
     public function setCategory($category)
     {
         $this->category = $category;
+        
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage3()
+    {
+        return $this->image3;
+    }
+
+    /**
+     * @param string $image3
+     * 
+     * @return Artist
+     */
+    public function setImage3($image3)
+    {
+        $this->image3 = $image3;
+        
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage4()
+    {
+        return $this->image4;
+    }
+
+    /**
+     * @param string $image4
+     * 
+     * @return Artist
+     */
+    public function setImage4($image4)
+    {
+        $this->image4 = $image4;
+        
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage5()
+    {
+        return $this->image5;
+    }
+
+    /**
+     * @param string $image5
+     * 
+     * @return Artist
+     */
+    public function setImage5($image5)
+    {
+        $this->image5 = $image5;
         
         return $this;
     }
