@@ -56,7 +56,7 @@ AppBundle\Entity\SliderImage:
 # Archive
 AppBundle\Entity\Archive:
   archive{1..20}:
-    year: <year()>
+    year(unique): <year()>
     enabled: <boolean(90)>
     image1: <name()>
     image2: <name()>
