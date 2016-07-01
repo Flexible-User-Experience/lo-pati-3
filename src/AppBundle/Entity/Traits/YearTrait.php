@@ -38,6 +38,4 @@ Trait YearTrait
 
         return $this;
     }
-
-
 }
