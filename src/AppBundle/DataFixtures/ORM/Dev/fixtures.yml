@@ -54,9 +54,9 @@ AppBundle\Entity\SliderImage:
     image: <name()>
 
 # Archive
-AppBundle\Entity\SliderImage:
-  year{1..20}:
-    year: <name()>
+AppBundle\Entity\Archive:
+  archive{1..20}:
+    year: <year()>
     enabled: <boolean(90)>
     image1: <name()>
     image2: <name()>
