@@ -2,11 +2,8 @@
 
 namespace AppBundle\Entity;
 
-use AppBundle\Entity\Traits\DescriptionTrait;
 use AppBundle\Entity\Traits\Image1Trait;
 use AppBundle\Entity\Traits\Image2Trait;
-use AppBundle\Entity\Traits\NameTrait;
-use AppBundle\Entity\Traits\PositionTrait;
 use AppBundle\Entity\Traits\YearTrait;
 use Doctrine\ORM\Mapping as ORM;
 
