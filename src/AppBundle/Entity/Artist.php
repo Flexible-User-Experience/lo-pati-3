@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use AppBundle\Entity\Traits\DescriptionTrait;
 use AppBundle\Entity\Traits\Document1Trait;
 use AppBundle\Entity\Traits\Image1Trait;
+use AppBundle\Entity\Traits\Image2Trait;
 use AppBundle\Entity\Traits\NameTrait;
 use AppBundle\Entity\Traits\SummaryTrait;
 use AppBundle\Entity\Traits\YearTrait;
