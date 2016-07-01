@@ -28,12 +28,6 @@ class SliderImage extends AbstractBase
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $altName;
-
-    /**
-     * @var string
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $link;
     
     /**
      * @var string
@@ -65,26 +59,6 @@ class SliderImage extends AbstractBase
     public function setAltName($altName)
     {
         $this->altName = $altName;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    /**
-     * @param string $link
-     *
-     * @return SliderImage
-     */
-    public function setLink($link)
-    {
-        $this->link = $link;
 
         return $this;
     }
