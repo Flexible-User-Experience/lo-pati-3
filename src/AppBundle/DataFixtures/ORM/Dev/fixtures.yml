@@ -60,3 +60,21 @@ AppBundle\Entity\Archive:
     enabled: <boolean(90)>
     image1: <name()>
     image2: <name()>
+
+# Artist
+AppBundle\Entity\Artist:
+  artist{1..10}:
+    name: <name()>
+    city: <city>
+    year(unique): <year()>
+    category: <word()>
+    summary: <sentence()>
+    description: <sentence(10)>
+    enabled: <boolean(90)>
+    image1: <name()>
+    image2: <name()>
+    image3: <name()>
+    image4: <name()>
+    image5: <name()>
+    link: <url()>
+    document1: <word()>
