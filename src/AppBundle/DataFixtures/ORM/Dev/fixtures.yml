@@ -58,8 +58,8 @@ AppBundle\Entity\Archive:
   archive{1..20}:
     year(unique): <year()>
     enabled: <boolean(90)>
-    image1: <name()>
-    image2: <name()>
+    image1Name: <name()>
+    image2Name: <name()>
 
 # Artist
 AppBundle\Entity\Artist:
@@ -71,8 +71,8 @@ AppBundle\Entity\Artist:
     summary: <sentence()>
     description: <sentence(10)>
     enabled: <boolean(90)>
-    image1: <name()>
-    image2: <name()>
+    image1Name: <name()>
+    image2Name: <name()>
     image3: <name()>
     image4: <name()>
     image5: <name()>
