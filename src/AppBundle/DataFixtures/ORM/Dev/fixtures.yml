@@ -6,9 +6,9 @@ AppBundle\Entity\Page:
     type: <word()>
     summary: <sentence()>
     front: <boolean(75)>
-    publishDate: <dateTimeThisMonth($max = 'now')>
+    publishDate: <dateTimeThisMonth()>
     visibleDate: <boolean(25)>
-    expirationDate: <dateTimeThisMonth($max = 'now')>
+    expirationDate: <dateTimeThisMonth()>
     realizationDate: <word()>
     place: <city()>
     links: <imageUrl()>
@@ -16,16 +16,13 @@ AppBundle\Entity\Page:
     video: <word()>
     urlVimeo: <imageUrl()>
     urlFlickr: <imageUrl()>
-    smallImageName1: <word()>
-    largeImageName: <word()>
+    image1Name: <word()>
+    image2Name: <word()>
     largeFooterImage: <word()>
-    documentName1: <word()>
-    documentTitle1: <word(2)>
+    document1Name: <word()>
     documentName2: <word()>
-    documentTitle2: <word(2)>
-    smallImageName2: <word()>
-    startDate: <dateTimeThisMonth($max = 'now')>
-    endDate: <dateTimeThisMonth($max = 'now')>
+    startDate: <dateTimeThisMonth()>
+    endDate: <dateTimeThisMonth()>
 
 # Setting
 AppBundle\Entity\Setting:
