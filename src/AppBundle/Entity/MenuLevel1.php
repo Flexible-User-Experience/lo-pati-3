@@ -144,6 +144,4 @@ class MenuLevel1 extends AbstractBase
 
         return $this;
     }
-
-
 }

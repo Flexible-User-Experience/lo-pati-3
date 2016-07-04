@@ -527,6 +527,7 @@ class Page extends AbstractBase
     public function setPageImages(ArrayCollection $pageImages)
     {
         $this->pageImages = $pageImages;
+
         return $this;
     }
 
@@ -540,13 +541,14 @@ class Page extends AbstractBase
 
     /**
      * @param MenuLevel1 $menuLevel1
+     * 
      * @return Page
      */
     public function setMenuLevel1($menuLevel1)
     {
+        $menuLevel1->setPage($this);
         $this->menuLevel1 = $menuLevel1;
+        
         return $this;
     }
-    
-    
 }
