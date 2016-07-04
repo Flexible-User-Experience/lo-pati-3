@@ -75,3 +75,17 @@ AppBundle\Entity\Artist:
     image5: <name()>
     link: <url()>
     document1Name: <word()>
+
+# MenuLevel1
+AppBundle\Entity\MenuLevel1:
+  menuLevel1{1..2}:
+    name: <name()>
+    position: <current()>
+    isArchive: <boolean(10)>
+
+# MenuLevel2
+AppBundle\Entity\MenuLevel2:
+  menuLevel2{1..3}:
+    name: <name()>
+    position: <current()>
+    isList: <boolean(10)>
