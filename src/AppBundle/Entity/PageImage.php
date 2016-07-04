@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Entity\Traits\Image1Trait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -19,13 +20,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class PageImage extends AbstractBase
 {
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string", length=255)
-     */
-    private $filename;
-
+    use Image1Trait;
+    
     /**
      * @var Page
      *
@@ -48,27 +44,7 @@ class PageImage extends AbstractBase
     {
         $this->pageImages = new ArrayCollection();
     }
-
-    /**
-     * @return string
-     */
-    public function getFilename()
-    {
-        return $this->filename;
-    }
-
-    /**
-     * @param string $filename
-     *
-     * @return PageImage
-     */
-    public function setFilename($filename)
-    {
-        $this->filename = $filename;
-
-        return $this;
-    }
-
+    
     /**
      * @return Page
      */
