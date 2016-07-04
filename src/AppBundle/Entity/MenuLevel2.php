@@ -10,16 +10,16 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * MenuLevel1
+ * MenuLevel2
  *
  * @category Entity
  * @package  AppBundle\Entity
  * @author   Wilson Iglesias <wiglesias83@gmail.com>
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Repository\MenuLevel1Repository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\MenuLevel2Repository")
  */
-class MenuLevel1 extends AbstractBase
+class MenuLevel2 extends AbstractBase
 {
     use NameTrait;
     use PositionTrait;
@@ -29,7 +29,7 @@ class MenuLevel1 extends AbstractBase
      *
      * @ORM\Column(type="boolean", options={"default"=0})
      */
-    private $isArchive;
+    private $isList;
     
     /**
      *
@@ -50,19 +50,19 @@ class MenuLevel1 extends AbstractBase
     /**
      * @return boolean
      */
-    public function getIsArchive()
+    public function getIsList()
     {
-        return $this->isArchive;
+        return $this->isList;
     }
 
     /**
-     * @param boolean $isArchive
+     * @param boolean $isList
      * 
      * @return MenuLevel1
      */
-    public function setIsArchive($isArchive)
+    public function setIsList($isList)
     {
-        $this->isArchive = $isArchive;
+        $this->isList = $isList;
         
         return $this;
     }
