@@ -3,6 +3,9 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Entity\Traits\DescriptionTrait;
+use AppBundle\Entity\Traits\Document1Trait;
+use AppBundle\Entity\Traits\Image1Trait;
+use AppBundle\Entity\Traits\Image2Trait;
 use AppBundle\Entity\Traits\NameTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -23,6 +26,9 @@ class Page extends AbstractBase
 {
     use NameTrait;
     use DescriptionTrait;
+    use Image1Trait;
+    use Image2Trait;
+    use Document1Trait;
 
     /**
      * @var string
@@ -120,20 +126,6 @@ class Page extends AbstractBase
      *
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $smallImageName1;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $largeImageName;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
     private $largeFooterImage;
 
     /**
@@ -141,35 +133,7 @@ class Page extends AbstractBase
      *
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $documentName1;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $documentTitle1;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
     private $documentName2;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $documentTitle2;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $smallImageName2;
 
     /**
      * @var \DateTime
@@ -191,6 +155,13 @@ class Page extends AbstractBase
      * @ORM\OneToMany(targetEntity="PageImage", mappedBy="page")
      */
     private $pageImages;
+
+    /**
+     * @var MenuLevel1
+     * 
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\MenuLevel1", inversedBy="page")
+     */
+    private $menuLevel1;
 
     /**
      *
@@ -463,46 +434,6 @@ class Page extends AbstractBase
     /**
      * @return string
      */
-    public function getSmallImageName1()
-    {
-        return $this->smallImageName1;
-    }
-
-    /**
-     * @param string $smallImageName1
-     *
-     * @return Page
-     */
-    public function setSmallImageName1($smallImageName1)
-    {
-        $this->smallImageName1 = $smallImageName1;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLargeImageName()
-    {
-        return $this->largeImageName;
-    }
-
-    /**
-     * @param string $largeImageName
-     *
-     * @return Page
-     */
-    public function setLargeImageName($largeImageName)
-    {
-        $this->largeImageName = $largeImageName;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
     public function getLargeFooterImage()
     {
         return $this->largeFooterImage;
@@ -523,46 +454,6 @@ class Page extends AbstractBase
     /**
      * @return string
      */
-    public function getDocumentName1()
-    {
-        return $this->documentName1;
-    }
-
-    /**
-     * @param string $documentName1
-     *
-     * @return Page
-     */
-    public function setDocumentName1($documentName1)
-    {
-        $this->documentName1 = $documentName1;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDocumentTitle1()
-    {
-        return $this->documentTitle1;
-    }
-
-    /**
-     * @param string $documentTitle1
-     *
-     * @return Page
-     */
-    public function setDocumentTitle1($documentTitle1)
-    {
-        $this->documentTitle1 = $documentTitle1;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
     public function getDocumentName2()
     {
         return $this->documentName2;
@@ -576,45 +467,6 @@ class Page extends AbstractBase
     public function setDocumentName2($documentName2)
     {
         $this->documentName2 = $documentName2;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDocumentTitle2()
-    {
-        return $this->documentTitle2;
-    }
-
-    /**
-     * @param string $documentTitle2
-     * @return Page
-     */
-    public function setDocumentTitle2($documentTitle2)
-    {
-        $this->documentTitle2 = $documentTitle2;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSmallImageName2()
-    {
-        return $this->smallImageName2;
-    }
-
-    /**
-     * @param string $smallImageName2
-     *
-     * @return Page
-     */
-    public function setSmallImageName2($smallImageName2)
-    {
-        $this->smallImageName2 = $smallImageName2;
 
         return $this;
     }
@@ -675,6 +527,28 @@ class Page extends AbstractBase
     public function setPageImages(ArrayCollection $pageImages)
     {
         $this->pageImages = $pageImages;
+
+        return $this;
+    }
+
+    /**
+     * @return MenuLevel1
+     */
+    public function getMenuLevel1()
+    {
+        return $this->menuLevel1;
+    }
+
+    /**
+     * @param MenuLevel1 $menuLevel1
+     * 
+     * @return Page
+     */
+    public function setMenuLevel1($menuLevel1)
+    {
+        $menuLevel1->setPage($this);
+        $this->menuLevel1 = $menuLevel1;
+        
         return $this;
     }
 }

@@ -6,9 +6,9 @@ AppBundle\Entity\Page:
     type: <word()>
     summary: <sentence()>
     front: <boolean(75)>
-    publishDate: <dateTimeThisMonth($max = 'now')>
+    publishDate: <dateTimeThisMonth()>
     visibleDate: <boolean(25)>
-    expirationDate: <dateTimeThisMonth($max = 'now')>
+    expirationDate: <dateTimeThisMonth()>
     realizationDate: <word()>
     place: <city()>
     links: <imageUrl()>
@@ -16,16 +16,13 @@ AppBundle\Entity\Page:
     video: <word()>
     urlVimeo: <imageUrl()>
     urlFlickr: <imageUrl()>
-    smallImageName1: <word()>
-    largeImageName: <word()>
+    image1Name: <word()>
+    image2Name: <word()>
     largeFooterImage: <word()>
-    documentName1: <word()>
-    documentTitle1: <word(2)>
+    document1Name: <word()>
     documentName2: <word()>
-    documentTitle2: <word(2)>
-    smallImageName2: <word()>
-    startDate: <dateTimeThisMonth($max = 'now')>
-    endDate: <dateTimeThisMonth($max = 'now')>
+    startDate: <dateTimeThisMonth()>
+    endDate: <dateTimeThisMonth()>
 
 # Setting
 AppBundle\Entity\Setting:
@@ -56,25 +53,41 @@ AppBundle\Entity\SliderImage:
 # Archive
 AppBundle\Entity\Archive:
   archive{1..20}:
-    year(unique): <year()>
+    year: <year()>
     enabled: <boolean(90)>
-    image1: <name()>
-    image2: <name()>
+    image1Name: <name()>
+    image2Name: <name()>
 
 # Artist
 AppBundle\Entity\Artist:
   artist{1..10}:
     name: <name()>
     city: <city>
-    year(unique): <year()>
+    year: <year()>
     category: <word()>
     summary: <sentence()>
     description: <sentence(10)>
     enabled: <boolean(90)>
-    image1: <name()>
-    image2: <name()>
+    image1Name: <name()>
+    image2Name: <name()>
     image3: <name()>
     image4: <name()>
     image5: <name()>
     link: <url()>
-    document1: <word()>
+    document1Name: <word()>
+
+# MenuLevel1
+AppBundle\Entity\MenuLevel1:
+  menuLevel1{1..5}:
+    name: <name()>
+    position: <current()>
+    isArchive: <boolean(10)>
+    page: @page<numberBetween(1,10)>
+
+# MenuLevel2
+AppBundle\Entity\MenuLevel2:
+  menuLevel2{1..5}:
+    name: <name()>
+    position: <current()>
+    isList: <boolean(10)>
+    menuLevel1: @menuLevel1<numberBetween(1, 5)>
