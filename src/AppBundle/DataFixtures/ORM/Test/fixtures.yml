@@ -56,7 +56,7 @@ AppBundle\Entity\SliderImage:
 # Archive
 AppBundle\Entity\Archive:
   archive{1..2}:
-    year(unique): <year()>
+    year: <year()>
     enabled: <boolean(90)>
     image1Name: <name()>
     image2Name: <name()>
@@ -66,7 +66,7 @@ AppBundle\Entity\Artist:
   artist{1..3}:
     name: <name()>
     city: <city>
-    year(unique): <year()>
+    year: <year()>
     category: <word()>
     summary: <sentence()>
     description: <sentence(10)>
@@ -77,4 +77,4 @@ AppBundle\Entity\Artist:
     image4: <name()>
     image5: <name()>
     link: <url()>
-    document1: <word()>
+    document1Name: <word()>
