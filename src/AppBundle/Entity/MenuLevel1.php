@@ -36,6 +36,13 @@ class MenuLevel1 extends AbstractBase
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\MenuLevel2", mappedBy="menuLevel1")
      */
     private $menuLevel2items;
+
+    /**
+     * @var Page
+     *
+     * @ORM\OneToOne(targetEntity="Cart", mappedBy="menuLevel1")
+     */
+    private $page;
     
     /**
      *
@@ -117,4 +124,26 @@ class MenuLevel1 extends AbstractBase
         
         return $this;
     }
+
+    /**
+     * @return Page
+     */
+    public function getPage()
+    {
+        return $this->page;
+    }
+
+    /**
+     * @param Page $page
+     *
+     * @return MenuLevel1
+     */
+    public function setPage($page)
+    {
+        $this->page = $page;
+
+        return $this;
+    }
+
+
 }

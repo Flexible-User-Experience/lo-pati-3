@@ -157,6 +157,13 @@ class Page extends AbstractBase
     private $pageImages;
 
     /**
+     * @var MenuLevel1
+     * 
+     * @ORM\OneToOne(targetEntity="Customer", inversedBy="page")
+     */
+    private $menuLevel1;
+
+    /**
      *
      *
      * Methods
@@ -522,4 +529,24 @@ class Page extends AbstractBase
         $this->pageImages = $pageImages;
         return $this;
     }
+
+    /**
+     * @return MenuLevel1
+     */
+    public function getMenuLevel1()
+    {
+        return $this->menuLevel1;
+    }
+
+    /**
+     * @param MenuLevel1 $menuLevel1
+     * @return Page
+     */
+    public function setMenuLevel1($menuLevel1)
+    {
+        $this->menuLevel1 = $menuLevel1;
+        return $this;
+    }
+    
+    
 }

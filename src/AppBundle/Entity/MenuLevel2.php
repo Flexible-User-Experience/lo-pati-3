@@ -33,6 +33,7 @@ class MenuLevel2 extends AbstractBase
 
     /**
      * @var MenuLevel1
+     * 
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\MenuLevel1", inversedBy="menuLevel2items")
      */
     private $menuLevel1;
@@ -84,6 +85,5 @@ class MenuLevel2 extends AbstractBase
         
         return $this;
     }
-    
     
 }
