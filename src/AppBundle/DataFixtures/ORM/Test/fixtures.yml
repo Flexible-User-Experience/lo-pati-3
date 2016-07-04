@@ -89,3 +89,4 @@ AppBundle\Entity\MenuLevel2:
     name: <name()>
     position: <current()>
     isList: <boolean(10)>
+    menuLevel1: @menuLevel1<numberBetween(1, 2)>

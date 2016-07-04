@@ -30,6 +30,12 @@ class MenuLevel2 extends AbstractBase
      * @ORM\Column(type="boolean", options={"default"=0})
      */
     private $isList;
+
+    /**
+     * @var MenuLevel1
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\MenuLevel1", inversedBy="menuLevel2items")
+     */
+    private $menuLevel1;
     
     /**
      *
@@ -38,15 +44,7 @@ class MenuLevel2 extends AbstractBase
      *
      *
      */
-
-    /**
-     * PageImage constructor.
-     */
-    public function __construct()
-    {
-        $this->pageImages = new ArrayCollection();
-    }
-
+    
     /**
      * @return boolean
      */
@@ -66,4 +64,26 @@ class MenuLevel2 extends AbstractBase
         
         return $this;
     }
+
+    /**
+     * @return MenuLevel1
+     */
+    public function getMenuLevel1()
+    {
+        return $this->menuLevel1;
+    }
+
+    /**
+     * @param MenuLevel1 $menuLevel1
+     * 
+     * @return MenuLevel2
+     */
+    public function setMenuLevel1($menuLevel1)
+    {
+        $this->menuLevel1 = $menuLevel1;
+        
+        return $this;
+    }
+    
+    
 }

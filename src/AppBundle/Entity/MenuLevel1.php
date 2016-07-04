@@ -30,6 +30,12 @@ class MenuLevel1 extends AbstractBase
      * @ORM\Column(type="boolean", options={"default"=0})
      */
     private $isArchive;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\MenuLevel2", mappedBy="menuLevel1")
+     */
+    private $menuLevel2items;
     
     /**
      *
@@ -40,11 +46,11 @@ class MenuLevel1 extends AbstractBase
      */
 
     /**
-     * PageImage constructor.
+     * MenuLevel1 constructor.
      */
     public function __construct()
     {
-        $this->pageImages = new ArrayCollection();
+        $this->menuLevel2items = new ArrayCollection();
     }
 
     /**
@@ -63,6 +69,51 @@ class MenuLevel1 extends AbstractBase
     public function setIsArchive($isArchive)
     {
         $this->isArchive = $isArchive;
+        
+        return $this;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getMenuLevel2items()
+    {
+        return $this->menuLevel2items;
+    }
+
+    /**
+     * @param ArrayCollection $menuLevel2items
+     * 
+     * @return MenuLevel1
+     */
+    public function setMenuLevel2items($menuLevel2items)
+    {
+        $this->menuLevel2items = $menuLevel2items;
+        
+        return $this;
+    }
+
+    /**
+     * @param MenuLevel2 $menuLevel2Item
+     * 
+     * @return $this
+     */
+    public function addMenuLevel2Item($menuLevel2Item)
+    {
+        $menuLevel2Item->setMenuLevel1($this);
+        $this->menuLevel2items->add($menuLevel2Item);
+        
+        return $this;
+    }
+
+    /**
+     * @param $menuLevel2Item
+     * 
+     * @return $this
+     */
+    public function removeMenuLevel2Item($menuLevel2Item)
+    {
+        $this->menuLevel2items->removeElement($menuLevel2Item);
         
         return $this;
     }
