@@ -159,7 +159,7 @@ class Page extends AbstractBase
     /**
      * @var MenuLevel1
      * 
-     * @ORM\OneToOne(targetEntity="Customer", inversedBy="page")
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\MenuLevel1", inversedBy="page")
      */
     private $menuLevel1;
 

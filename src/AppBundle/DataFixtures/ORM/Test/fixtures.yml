@@ -82,6 +82,7 @@ AppBundle\Entity\MenuLevel1:
     name: <name()>
     position: <current()>
     isArchive: <boolean(10)>
+    page: @page<numberBetween(1,2)>
 
 # MenuLevel2
 AppBundle\Entity\MenuLevel2:

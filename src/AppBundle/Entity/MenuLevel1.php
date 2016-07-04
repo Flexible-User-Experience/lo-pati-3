@@ -40,7 +40,7 @@ class MenuLevel1 extends AbstractBase
     /**
      * @var Page
      *
-     * @ORM\OneToOne(targetEntity="Cart", mappedBy="menuLevel1")
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Page", mappedBy="menuLevel1")
      */
     private $page;
     
