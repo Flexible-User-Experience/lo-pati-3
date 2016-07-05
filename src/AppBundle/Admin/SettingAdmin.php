@@ -26,6 +26,51 @@ class SettingAdmin extends AbstractBaseAdmin
     );
 
     /**
+     * @param FormMapper $formMapper
+     */
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->with('General', $this->getFormMdSuccessBoxArray(6))
+            ->add(
+                'address',
+                null,
+                array(
+                    'label'    => 'Adreça',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'timetable',
+                null,
+                array(
+                    'label'    => 'Horari',
+                    'required' => true,
+                )
+            )
+            ->end()
+            ->with('Agents', $this->getFormMdSuccessBoxArray(6))
+            ->add(
+                'organizer',
+                null,
+                array(
+                    'label'    => 'Organitzador',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'collaborator',
+                null,
+                array(
+                    'label'    => 'Col·laborador',
+                    'required' => true,
+                )
+            )
+            ->end()
+        ;
+    }
+
+    /**
      * @param DatagridMapper $datagridMapper
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
