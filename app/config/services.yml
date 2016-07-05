@@ -23,3 +23,9 @@ services:
         arguments: [ ~, AppBundle\Entity\Archive, ~ ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Arxiu", group: "Page" }
+
+    admin.workingDaySetting:
+        class: AppBundle\Admin\WorkingDaySettingAdmin
+        arguments: [ ~, AppBundle\Entity\WorkingDaySetting, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Configuració Dies Laborals", group: "Page" }
