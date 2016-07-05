@@ -17,3 +17,9 @@ services:
         arguments: [ ~, AppBundle\Entity\SliderImage, ~ ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Slider", group: "Page" }
+
+    admin.archive:
+        class: AppBundle\Admin\ArchiveAdmin
+        arguments: [ ~, AppBundle\Entity\Archive, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Arxiu", group: "Page" }
