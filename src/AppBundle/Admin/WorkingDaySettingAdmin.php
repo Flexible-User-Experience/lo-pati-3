@@ -26,6 +26,33 @@ class WorkingDaySettingAdmin extends AbstractBaseAdmin
     );
 
     /**
+     * @param FormMapper $formMapper
+     */
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->with('General', $this->getFormMdSuccessBoxArray(6))
+            ->add(
+                'weekdayNumber',
+                null,
+                array(
+                    'label'    => 'Dies Laborals',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'name',
+                null,
+                array(
+                    'label'    => 'Nom',
+                    'required' => true,
+                )
+            )
+            ->end()
+        ;
+    }
+
+    /**
      * @param DatagridMapper $datagridMapper
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
