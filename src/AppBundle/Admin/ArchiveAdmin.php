@@ -26,6 +26,36 @@ class ArchiveAdmin extends AbstractBaseAdmin
     );
 
     /**
+     * @param DatagridMapper $datagridMapper
+     */
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add(
+                'year',
+                null,
+                array(
+                    'label' => 'Any',
+                )
+            )
+            ->add(
+                'image1Name',
+                null,
+                array(
+                    'label' => 'Imatge 1',
+                )
+            )
+            ->add(
+                'image2Name',
+                null,
+                array(
+                    'label' => 'Imatge 2',
+                )
+            )
+        ;
+    }
+
+    /**
      * @param ListMapper $listMapper
      */
     protected function configureListFields(ListMapper $listMapper)
