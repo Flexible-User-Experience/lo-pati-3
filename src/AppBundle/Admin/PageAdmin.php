@@ -352,7 +352,7 @@ class PageAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label'  => 'Data Publicació',
-                    'format' => 'd/m/Y'
+                    'format' => 'd/m/Y',
                 )
             )
             ->add(

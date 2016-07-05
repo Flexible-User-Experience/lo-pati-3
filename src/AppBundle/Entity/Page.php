@@ -164,6 +164,14 @@ class Page extends AbstractBase
     private $menuLevel1;
 
     /**
+     * @var MenuLevel2
+     *
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\MenuLevel2", inversedBy="page")
+     */
+    private $menuLevel2;
+
+
+    /**
      *
      *
      * Methods
@@ -551,4 +559,27 @@ class Page extends AbstractBase
         
         return $this;
     }
+
+    /**
+     * @return MenuLevel2
+     */
+    public function getMenuLevel2()
+    {
+        return $this->menuLevel2;
+    }
+
+    /**
+     * @param MenuLevel2 $menuLevel2
+     *
+     * @return Page
+     */
+    public function setMenuLevel2($menuLevel2)
+    {
+        $menuLevel2->setPage($this);
+        $this->menuLevel2 = $menuLevel2;
+
+        return $this;
+    }
+
+
 }

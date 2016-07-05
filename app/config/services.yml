@@ -5,3 +5,27 @@ services:
         arguments: [ ~, AppBundle\Entity\Page, ~ ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Pàgina", group: "Page" }
+
+    admin.setting:
+        class: AppBundle\Admin\SettingAdmin
+        arguments: [ ~, AppBundle\Entity\Setting, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Configuració", group: "Page" }
+
+    admin.sliderImage:
+        class: AppBundle\Admin\SliderImageAdmin
+        arguments: [ ~, AppBundle\Entity\SliderImage, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Slider", group: "Page" }
+
+    admin.archive:
+        class: AppBundle\Admin\ArchiveAdmin
+        arguments: [ ~, AppBundle\Entity\Archive, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Arxiu", group: "Page" }
+
+    admin.workingDaySetting:
+        class: AppBundle\Admin\WorkingDaySettingAdmin
+        arguments: [ ~, AppBundle\Entity\WorkingDaySetting, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Configuració Dies Laborals", group: "Page" }
