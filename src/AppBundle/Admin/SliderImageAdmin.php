@@ -26,6 +26,67 @@ class SliderImageAdmin extends AbstractBaseAdmin
     );
 
     /**
+     * @param FormMapper $formMapper
+     */
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->with('General', $this->getFormMdSuccessBoxArray(6))
+            ->add(
+                'name',
+                null,
+                array(
+                    'label'    => 'nom',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'altName',
+                null,
+                array(
+                    'label'    => 'Alt Nom',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'description',
+                null,
+                array(
+                    'label'    => 'Descripció',
+                    'required' => true,
+                )
+            )
+            ->end()
+            ->with('Altres', $this->getFormMdSuccessBoxArray(6))
+            ->add(
+                'link',
+                null,
+                array(
+                    'label'    => 'Url',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'position',
+                null,
+                array(
+                    'label'    => 'Posició',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'image',
+                null,
+                array(
+                    'label'    => 'Imatge',
+                    'required' => true,
+                )
+            )
+            ->end()
+        ;
+    }
+
+    /**
      * @param DatagridMapper $datagridMapper
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -42,7 +103,7 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 'altName',
                 null,
                 array(
-                    'label' => 'Alt Name',
+                    'label' => 'Alt Nom',
                 )
             )
             ->add(
@@ -95,7 +156,7 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 'altName',
                 null,
                 array(
-                    'label'    => 'Alt Name',
+                    'label'    => 'Alt Nom',
                     'editable' => true,
                 )
             )
