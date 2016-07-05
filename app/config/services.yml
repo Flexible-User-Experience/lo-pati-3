@@ -5,3 +5,9 @@ services:
         arguments: [ ~, AppBundle\Entity\Page, ~ ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Pàgina", group: "Page" }
+
+    admin.setting:
+        class: AppBundle\Admin\SettingAdmin
+        arguments: [ ~, AppBundle\Entity\Setting, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Configuració", group: "Page" }
