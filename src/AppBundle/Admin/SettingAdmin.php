@@ -26,6 +26,43 @@ class SettingAdmin extends AbstractBaseAdmin
     );
 
     /**
+     * @param DatagridMapper $datagridMapper
+     */
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add(
+                'address',
+                null,
+                array(
+                    'label' => 'Adreça',
+                )
+            )
+            ->add(
+                'timetable',
+                null,
+                array(
+                    'label' => 'Horari',
+                )
+            )
+            ->add(
+                'collaborator',
+                null,
+                array(
+                    'label' => 'Col·laborador',
+                )
+            )
+            ->add(
+                'organizer',
+                null,
+                array(
+                    'label' => 'Organitzador',
+                )
+            )
+        ;
+    }
+
+    /**
      * @param ListMapper $listMapper
      */
     protected function configureListFields(ListMapper $listMapper)
