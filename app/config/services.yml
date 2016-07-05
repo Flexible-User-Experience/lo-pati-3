@@ -11,3 +11,9 @@ services:
         arguments: [ ~, AppBundle\Entity\Setting, ~ ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Configuració", group: "Page" }
+
+    admin.sliderImage:
+        class: AppBundle\Admin\SliderImageAdmin
+        arguments: [ ~, AppBundle\Entity\SliderImage, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Slider", group: "Page" }
