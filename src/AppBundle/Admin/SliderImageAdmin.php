@@ -26,6 +26,57 @@ class SliderImageAdmin extends AbstractBaseAdmin
     );
 
     /**
+     * @param DatagridMapper $datagridMapper
+     */
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add(
+                'name',
+                null,
+                array(
+                    'label' => 'Nom',
+                )
+            )
+            ->add(
+                'altName',
+                null,
+                array(
+                    'label' => 'Alt Name',
+                )
+            )
+            ->add(
+                'description',
+                null,
+                array(
+                    'label' => 'Descripció',
+                )
+            )
+            ->add(
+                'link',
+                null,
+                array(
+                    'label' => 'Url',
+                )
+            )
+            ->add(
+                'position',
+                null,
+                array(
+                    'label' => 'Posició',
+                )
+            )
+            ->add(
+                'image',
+                null,
+                array(
+                    'label' => 'Imatge',
+                )
+            )
+        ;
+    }
+
+    /**
      * @param ListMapper $listMapper
      */
     protected function configureListFields(ListMapper $listMapper)
