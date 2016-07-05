@@ -26,6 +26,29 @@ class WorkingDaySettingAdmin extends AbstractBaseAdmin
     );
 
     /**
+     * @param DatagridMapper $datagridMapper
+     */
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add(
+                'weekdayNumber',
+                null,
+                array(
+                    'label' => 'Dies Laborals',
+                )
+            )
+            ->add(
+                'name',
+                null,
+                array(
+                    'label' => 'Nom',
+                )
+            )
+        ;
+    }
+
+    /**
      * @param ListMapper $listMapper
      */
     protected function configureListFields(ListMapper $listMapper)
