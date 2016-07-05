@@ -26,6 +26,41 @@ class ArchiveAdmin extends AbstractBaseAdmin
     );
 
     /**
+     * @param FormMapper $formMapper
+     */
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->with('General', $this->getFormMdSuccessBoxArray(8))
+            ->add(
+                'year',
+                null,
+                array(
+                    'label'    => 'Any',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'image1Name',
+                null,
+                array(
+                    'label'    => 'Imatge 1',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'image2Name',
+                null,
+                array(
+                    'label'    => 'Imatge 2',
+                    'required' => true,
+                )
+            )
+            ->end()
+        ;
+    }
+
+    /**
      * @param DatagridMapper $datagridMapper
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
