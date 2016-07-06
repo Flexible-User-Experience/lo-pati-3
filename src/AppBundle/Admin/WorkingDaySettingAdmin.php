@@ -48,6 +48,14 @@ class WorkingDaySettingAdmin extends AbstractBaseAdmin
                     'required' => true,
                 )
             )
+            ->add(
+                'enabled',
+                null,
+                array(
+                    'label'    => 'Actiu',
+                    'required' => false,
+                )
+            )
             ->end()
         ;
     }
@@ -95,6 +103,14 @@ class WorkingDaySettingAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label'    => 'Nom',
+                    'editable' => true,
+                )
+            )
+            ->add(
+                'enabled',
+                null,
+                array(
+                    'label'    => 'Actiu',
                     'editable' => true,
                 )
             )
