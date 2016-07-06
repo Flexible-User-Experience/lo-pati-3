@@ -145,6 +145,14 @@ class SliderImageAdmin extends AbstractBaseAdmin
         unset($this->listModes['mosaic']);
         $listMapper
             ->add(
+                'position',
+                null,
+                array(
+                    'label'    => 'Posició',
+                    'editable' => true,
+                )
+            )
+            ->add(
                 'name',
                 null,
                 array(
@@ -153,34 +161,10 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'altName',
-                null,
-                array(
-                    'label'    => 'Alt Nom',
-                    'editable' => true,
-                )
-            )
-            ->add(
-                'description',
-                null,
-                array(
-                    'label'    => 'Descripció',
-                    'editable' => true,
-                )
-            )
-            ->add(
                 'link',
                 null,
                 array(
                     'label'    => 'Url',
-                    'editable' => true,
-                )
-            )
-            ->add(
-                'position',
-                null,
-                array(
-                    'label'    => 'Posició',
                     'editable' => true,
                 )
             )
