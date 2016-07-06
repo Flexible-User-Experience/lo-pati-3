@@ -62,7 +62,7 @@ AppBundle\Entity\Archive:
 AppBundle\Entity\Artist:
   artist{1..3}:
     name: <name()>
-    city: <city>
+    city: <city()>
     year: <year()>
     category: <word()>
     summary: <sentence()>
