@@ -125,4 +125,12 @@ class WorkingDaySettingAdmin extends AbstractBaseAdmin
                 )
             );
     }
+
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        parent::configureRoutes($collection);
+        $collection
+            ->remove('create')
+            ->remove('delete');
+    }
 }
