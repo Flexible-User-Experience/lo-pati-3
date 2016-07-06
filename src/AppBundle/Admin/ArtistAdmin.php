@@ -26,6 +26,106 @@ class ArtistAdmin extends AbstractBaseAdmin
     );
 
     /**
+     * @param DatagridMapper $datagridMapper
+     */
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add(
+                'name',
+                null,
+                array(
+                    'label' => 'Nom',
+                )
+            )
+            ->add(
+                'city',
+                null,
+                array(
+                    'label' => 'Ciutat',
+                )
+            )
+            ->add(
+                'year',
+                null,
+                array(
+                    'label' => 'Any',
+                )
+            )
+            ->add(
+                'category',
+                null,
+                array(
+                    'label' => 'Categoria',
+                )
+            )
+            ->add(
+                'summary',
+                null,
+                array(
+                    'label' => 'Resum',
+                )
+            )
+            ->add(
+                'description',
+                null,
+                array(
+                    'label' => 'Descripció',
+                )
+            )
+            ->add(
+                'image1Name',
+                null,
+                array(
+                    'label' => 'Imatge 1',
+                )
+            )
+            ->add(
+                'image2Name',
+                null,
+                array(
+                    'label' => 'Imatge 2',
+                )
+            )
+            ->add(
+                'image3',
+                null,
+                array(
+                    'label' => 'Imatge 3',
+                )
+            )
+            ->add(
+                'image4',
+                null,
+                array(
+                    'label' => 'Imatge 4',
+                )
+            )
+            ->add(
+                'image5',
+                null,
+                array(
+                    'label' => 'Imatge 5',
+                )
+            )
+            ->add(
+                'link',
+                null,
+                array(
+                    'label' => 'Url',
+                )
+            )
+            ->add(
+                'document1Name',
+                null,
+                array(
+                    'label' => 'Nom del Document',
+                )
+            )
+        ;
+    }
+
+    /**
      * @param ListMapper $listMapper
      */
     protected function configureListFields(ListMapper $listMapper)
@@ -132,7 +232,7 @@ class ArtistAdmin extends AbstractBaseAdmin
                 'document1Name',
                 null,
                 array(
-                    'label'    => 'Image 3',
+                    'label'    => 'Nom del Document',
                     'editable' => true,
                 )
             )
