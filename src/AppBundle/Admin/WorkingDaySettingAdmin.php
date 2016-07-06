@@ -48,6 +48,14 @@ class WorkingDaySettingAdmin extends AbstractBaseAdmin
                     'required' => true,
                 )
             )
+            ->add(
+                'enabled',
+                null,
+                array(
+                    'label'    => 'Actiu',
+                    'required' => false,
+                )
+            )
             ->end()
         ;
     }
@@ -99,6 +107,14 @@ class WorkingDaySettingAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
+                'enabled',
+                null,
+                array(
+                    'label'    => 'Actiu',
+                    'editable' => true,
+                )
+            )
+            ->add(
                 '_action',
                 'actions',
                 array(
@@ -108,5 +124,13 @@ class WorkingDaySettingAdmin extends AbstractBaseAdmin
                     )
                 )
             );
+    }
+
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        parent::configureRoutes($collection);
+        $collection
+            ->remove('create')
+            ->remove('delete');
     }
 }

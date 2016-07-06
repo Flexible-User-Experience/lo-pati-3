@@ -29,3 +29,15 @@ services:
         arguments: [ ~, AppBundle\Entity\WorkingDaySetting, ~ ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Configuració Dies Laborals", group: "Page" }
+
+    admin.artist:
+        class: AppBundle\Admin\ArtistAdmin
+        arguments: [ ~, AppBundle\Entity\Artist, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Artista", group: "Page" }
+
+    admin.menuLevel1:
+        class: AppBundle\Admin\MenuLevel1Admin
+        arguments: [ ~, AppBundle\Entity\MenuLevel1, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Categoria", group: "Page" }

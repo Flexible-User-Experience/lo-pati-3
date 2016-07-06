@@ -44,7 +44,7 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 'image1Name',
                 null,
                 array(
-                    'label'    => 'Imatge 1',
+                    'label'    => 'Nom Imatge 1',
                     'required' => true,
                 )
             )
@@ -52,7 +52,7 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 'image2Name',
                 null,
                 array(
-                    'label'    => 'Imatge 2',
+                    'label'    => 'Nom Imatge 2',
                     'required' => true,
                 )
             )
@@ -77,14 +77,14 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 'image1Name',
                 null,
                 array(
-                    'label' => 'Imatge 1',
+                    'label' => 'Nom Imatge 1',
                 )
             )
             ->add(
                 'image2Name',
                 null,
                 array(
-                    'label' => 'Imatge 2',
+                    'label' => 'Nom Imatge 2',
                 )
             )
         ;
@@ -109,7 +109,7 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 'image1Name',
                 null,
                 array(
-                    'label'    => 'Imatge 1',
+                    'label'    => 'Nom Imatge 1',
                     'editable' => true,
                 )
             )
@@ -117,7 +117,7 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 'image2Name',
                 null,
                 array(
-                    'label'    => 'Imatge 2',
+                    'label'    => 'Nom Imatge 2',
                     'editable' => true,
                 )
             )
