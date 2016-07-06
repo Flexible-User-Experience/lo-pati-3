@@ -275,22 +275,6 @@ class ArtistAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'summary',
-                null,
-                array(
-                    'label'    => 'Resum',
-                    'editable' => true,
-                )
-            )
-            ->add(
-                'description',
-                null,
-                array(
-                    'label'    => 'Descripció',
-                    'editable' => true,
-                )
-            )
-            ->add(
                 'image1Name',
                 null,
                 array(
@@ -327,22 +311,6 @@ class ArtistAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label'    => 'Image 5',
-                    'editable' => true,
-                )
-            )
-            ->add(
-                'link',
-                null,
-                array(
-                    'label'    => 'Url',
-                    'editable' => true,
-                )
-            )
-            ->add(
-                'document1Name',
-                null,
-                array(
-                    'label'    => 'Nom del Document',
                     'editable' => true,
                 )
             )
