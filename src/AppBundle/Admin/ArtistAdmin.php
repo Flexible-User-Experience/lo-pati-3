@@ -26,6 +26,116 @@ class ArtistAdmin extends AbstractBaseAdmin
     );
 
     /**
+     * @param FormMapper $formMapper
+     */
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->with('General', $this->getFormMdSuccessBoxArray(7))
+            ->add(
+                'name',
+                null,
+                array(
+                    'label'    => 'nom',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'city',
+                null,
+                array(
+                    'label'    => 'Ciutat',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'year',
+                null,
+                array(
+                    'label'    => 'Any',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'category',
+                null,
+                array(
+                    'label'    => 'Categoria',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'description',
+                null,
+                array(
+                    'label'    => 'Descripció',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'link',
+                null,
+                array(
+                    'label'    => 'Url',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'document1Name',
+                null,
+                array(
+                    'label'    => 'Nom del Document',
+                    'required' => true,
+                )
+            )
+            ->end()
+            ->with('Noms Imatges', $this->getFormMdSuccessBoxArray(5))
+            ->add(
+                'image1Name',
+                null,
+                array(
+                    'label'    => 'Nom Imatge 1',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'image1Name',
+                null,
+                array(
+                    'label'    => 'Nom Imatge 2',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'image3',
+                null,
+                array(
+                    'label'    => 'Imatge 3',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'image4',
+                null,
+                array(
+                    'label'    => 'Imatge 4',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'image5',
+                null,
+                array(
+                    'label'    => 'Imatge 5',
+                    'required' => true,
+                )
+            )
+            ->end()
+        ;
+    }
+
+
+    /**
      * @param DatagridMapper $datagridMapper
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -77,14 +187,14 @@ class ArtistAdmin extends AbstractBaseAdmin
                 'image1Name',
                 null,
                 array(
-                    'label' => 'Imatge 1',
+                    'label' => 'Nom Imatge 1',
                 )
             )
             ->add(
                 'image2Name',
                 null,
                 array(
-                    'label' => 'Imatge 2',
+                    'label' => 'Nom Imatge 2',
                 )
             )
             ->add(
@@ -184,7 +294,7 @@ class ArtistAdmin extends AbstractBaseAdmin
                 'image1Name',
                 null,
                 array(
-                    'label'    => 'Image 1',
+                    'label'    => 'Nom Image 1',
                     'editable' => true,
                 )
             )
@@ -192,7 +302,7 @@ class ArtistAdmin extends AbstractBaseAdmin
                 'image2Name',
                 null,
                 array(
-                    'label'    => 'Image 2',
+                    'label'    => 'Nom Image 2',
                     'editable' => true,
                 )
             )
