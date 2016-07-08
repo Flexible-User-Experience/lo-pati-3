@@ -41,3 +41,9 @@ services:
         arguments: [ ~, AppBundle\Entity\MenuLevel1, ~ ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Categoria", group: "Page" }
+
+    admin.menuLevel2:
+        class: AppBundle\Admin\MenuLevel2Admin
+        arguments: [ ~, AppBundle\Entity\MenuLevel2, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Subcategoria", group: "Page" }
