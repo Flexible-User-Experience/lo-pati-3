@@ -24,7 +24,72 @@ class MenuLevel1Admin extends AbstractBaseAdmin
         '_sort_by'    => 'position',
         '_sort_order' => 'asc',
     );
-    
+
+    /**
+     * @param FormMapper $formMapper
+     */
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->with('General', $this->getFormMdSuccessBoxArray(6))
+            ->add(
+                'position',
+                null,
+                array(
+                    'label'    => 'Dies Posició',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'name',
+                null,
+                array(
+                    'label'    => 'Nom',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'isArchive',
+                null,
+                array(
+                    'label'    => 'Arxiu',
+                    'required' => false,
+                )
+            )
+            ->end()
+        ;
+    }
+
+    /**
+    * @param DatagridMapper $datagridMapper
+    */
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add(
+                'position',
+                null,
+                array(
+                    'label' => 'Posició',
+                )
+            )
+            ->add(
+                'name',
+                null,
+                array(
+                    'label' => 'Nom',
+                )
+            )
+            ->add(
+                'isArchive',
+                null,
+                array(
+                    'label' => 'Arxiu',
+                )
+            )
+        ;
+    }
+
     /**
      * @param ListMapper $listMapper
      */
