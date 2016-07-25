@@ -16,11 +16,11 @@ AppBundle\Entity\Page:
     video: <word()>
     urlVimeo: <imageUrl()>
     urlFlickr: <imageUrl()>
+    largeFooterImage: <word()>
     image1Name: <word()>
     image2Name: <word()>
-    largeFooterImage: <word()>
-    document1Name: <word()>
     documentName2: <word()>
+    document1Name: <word()>
     startDate: <dateTimeThisMonth()>
     endDate: <dateTimeThisMonth()>
 

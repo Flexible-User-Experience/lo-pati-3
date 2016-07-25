@@ -149,22 +149,22 @@ class PageAdmin extends AbstractBaseAdmin
                     'required' => false,
                 )
             )
-            ->add(
-                'smallImageName1',
-                null,
-                array(
-                    'label'    => 'Nom Imatge Petita 1',
-                    'required' => false,
-                )
-            )
-            ->add(
-                'largeImageName',
-                null,
-                array(
-                    'label'    => 'Nom Imatge Gran',
-                    'required' => false,
-                )
-            )
+//            ->add(
+//                'Image1Name',
+//                null,
+//                array(
+//                    'label'    => 'Nom Imatge Petita 1',
+//                    'required' => false,
+//                )
+//            )
+//            ->add(
+//                'Image2Name',
+//                null,
+//                array(
+//                    'label'    => 'Nom Imatge Gran',
+//                    'required' => false,
+//                )
+//            )
             ->add(
                 'largeFooterImage',
                 null,
@@ -174,18 +174,10 @@ class PageAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'documentName1',
+                'document1Name',
                 null,
                 array(
                     'label'    => 'Nom Document 1',
-                    'required' => false,
-                )
-            )
-            ->add(
-                'documentTitle1',
-                null,
-                array(
-                    'label'    => 'Títol Document 1',
                     'required' => false,
                 )
             )
@@ -194,22 +186,6 @@ class PageAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label'    => 'Nom Document 2',
-                    'required' => false,
-                )
-            )
-            ->add(
-                'documentTitle2',
-                null,
-                array(
-                    'label'    => 'Títol Document 2',
-                    'required' => false,
-                )
-            )
-            ->add(
-                'smallImageName2',
-                null,
-                array(
-                    'label'    => 'Nom Imatge Petita 2',
                     'required' => false,
                 )
             )
