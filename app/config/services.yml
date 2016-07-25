@@ -5,3 +5,45 @@ services:
         arguments: [ ~, AppBundle\Entity\Page, ~ ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Pàgina", group: "Page" }
+
+    admin.setting:
+        class: AppBundle\Admin\SettingAdmin
+        arguments: [ ~, AppBundle\Entity\Setting, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Configuració", group: "Setting" }
+
+    admin.sliderImage:
+        class: AppBundle\Admin\SliderImageAdmin
+        arguments: [ ~, AppBundle\Entity\SliderImage, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Slider", group: "Page" }
+
+    admin.archive:
+        class: AppBundle\Admin\ArchiveAdmin
+        arguments: [ ~, AppBundle\Entity\Archive, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Arxiu", group: "Page" }
+
+    admin.workingDaySetting:
+        class: AppBundle\Admin\WorkingDaySettingAdmin
+        arguments: [ ~, AppBundle\Entity\WorkingDaySetting, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Configuració Dies Laborals", group: "Setting" }
+
+    admin.artist:
+        class: AppBundle\Admin\ArtistAdmin
+        arguments: [ ~, AppBundle\Entity\Artist, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Artista", group: "Page" }
+
+    admin.menuLevel1:
+        class: AppBundle\Admin\MenuLevel1Admin
+        arguments: [ ~, AppBundle\Entity\MenuLevel1, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Categoria", group: "Page" }
+
+    admin.menuLevel2:
+        class: AppBundle\Admin\MenuLevel2Admin
+        arguments: [ ~, AppBundle\Entity\MenuLevel2, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Subcategoria", group: "Page" }

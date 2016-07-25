@@ -3,7 +3,9 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Entity\Traits\DescriptionTrait;
+use AppBundle\Entity\Traits\LinkTrait;
 use AppBundle\Entity\Traits\NameTrait;
+use AppBundle\Entity\Traits\PositionTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,25 +22,15 @@ class SliderImage extends AbstractBase
 {
     use NameTrait;
     use DescriptionTrait;
+    use PositionTrait;
+    use LinkTrait;
     
     /**
      * @var string
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $altName;
-
-    /**
-     * @var string
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $link;
-
-    /**
-     * @var integer
-     * @ORM\Column(type="integer")
-     */
-    private $position;
-
+    
     /**
      * @var string
      * @ORM\Column(type="string", length=255)
@@ -72,47 +64,7 @@ class SliderImage extends AbstractBase
 
         return $this;
     }
-
-    /**
-     * @return string
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    /**
-     * @param string $link
-     *
-     * @return SliderImage
-     */
-    public function setLink($link)
-    {
-        $this->link = $link;
-
-        return $this;
-    }
-
-    /**
-     * @return integer
-     */
-    public function getPosition()
-    {
-        return $this->position;
-    }
-
-    /**
-     * @param integer $position
-     *
-     * @return SliderImage
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
+    
     /**
      * @return string
      */

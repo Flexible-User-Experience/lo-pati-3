@@ -39,11 +39,11 @@ class DefaultController extends Controller
     public function newSettingAction(Request $request)
     {
         $setting = new Setting();
-        $setting->setAddress('my address');
-        $setting->setTimetable('my timetable');
-        $setting->setOrganizer('my organizer');
-        $setting->setCollaborator('my collaborator');
-        
+        $setting
+            ->setAddress('my address')
+            ->setTimetable('my timetable')
+            ->setOrganizer('my organizer')
+            ->setCollaborator('my collaborator');
         $em = $this->getDoctrine()->getManager();
         $em->persist($setting);
         $em->flush();
