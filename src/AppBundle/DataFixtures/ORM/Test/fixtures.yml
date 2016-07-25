@@ -24,6 +24,12 @@ AppBundle\Entity\Page:
     startDate: <dateTimeThisMonth()>
     endDate: <dateTimeThisMonth()>
 
+# PageImage
+AppBundle\Entity\PageImage:
+  pageImage{1..2}:
+    image1Name: <name()>
+    page: @page<numberBetween(1, 2)>
+
 # Setting
 AppBundle\Entity\Setting:
   setting{1..5}:

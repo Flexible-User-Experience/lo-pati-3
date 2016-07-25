@@ -6,6 +6,13 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Pàgina", group: "Page" }
 
+# Sonata Admin
+    admin.pageImage:
+        class: AppBundle\Admin\PageImageAdmin
+        arguments: [ ~, AppBundle\Entity\PageImage, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Imatge", group: "Image", }
+
     admin.setting:
         class: AppBundle\Admin\SettingAdmin
         arguments: [ ~, AppBundle\Entity\Setting, ~ ]
