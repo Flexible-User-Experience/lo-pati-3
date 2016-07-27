@@ -33,139 +33,77 @@ class PageImageAdmin extends AbstractBaseAdmin
                 'image1Name',
                 null,
                 array(
-                    'attr' => array(
-                        'hidden' => true,
-                    ),
+//                    'attr' => array(
+//                        'hidden' => true,
+//                    ),
                 )
             )
-            ->add(
-                'imageFile',
-                'file',
-                array(
-                    'label'       => 'backend.admin.image_name',
-                    'required'    => false,
-                    'help'        => $this->getImageHelperFormMapperWithThumbnail(),
-                    'sonata_help' => $this->getImageHelperFormMapperWithThumbnail(),
-                )
-            )
+//            ->add(
+//                'imageFile',
+//                'file',
+//                array(
+//                    'label'       => 'backend.admin.image_name',
+//                    'required'    => false,
+//                    'help'        => $this->getImageHelperFormMapperWithThumbnail(),
+//                    'sonata_help' => $this->getImageHelperFormMapperWithThumbnail(),
+//                )
+//            )
             ->end()
-            ->with('backend.admin.controls', $this->getFormMdSuccessBoxArray(6))
+            ->with('Controls', $this->getFormMdSuccessBoxArray(6))
             ->add(
                 'enabled',
                 'checkbox',
                 array(
-                    'label'    => 'backend.admin.enabled',
+                    'label'    => 'Actiu',
                     'required' => false,
                 )
             )
             ->end();
     }
 
-//    /**
-//     * @param DatagridMapper $datagridMapper
-//     */
-//    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
-//    {
-//        $datagridMapper
-//            ->add(
-//                'position',
-//                null,
-//                array(
-//                    'label' => 'backend.admin.position',
-//                )
-//            )
-//            ->add(
-//                'createdAt',
-//                'doctrine_orm_date',
-//                array(
-//                    'label'      => 'backend.admin.created_date',
-//                    'field_type' => 'sonata_type_date_picker',
-//                    'format'     => 'd-m-Y',
-//                )
-//            )
-//            ->add(
-//                'imageName',
-//                null,
-//                array(
-//                    'label' => 'backend.admin.image_name',
-//                )
-//            )
-//            ->add(
-//                'alt',
-//                null,
-//                array(
-//                    'label'    => 'backend.admin.alt',
-//                    'editable' => true,
-//                )
-//            )
-//            ->add(
-//                'enabled',
-//                null,
-//                array(
-//                    'label'    => 'backend.admin.enabled',
-//                    'editable' => true,
-//                )
-//            );
-//    }
-//
-//    /**
-//     * @param ListMapper $listMapper
-//     */
-//    protected function configureListFields(ListMapper $listMapper)
-//    {
-//        unset($this->listModes['mosaic']);
-//        $listMapper
-//            ->add(
-//                'position',
-//                null,
-//                array(
-//                    'label' => 'backend.admin.position',
-//                )
-//            )
-//            ->add(
-//                'createdAt',
-//                'date',
-//                array(
-//                    'label'    => 'backend.admin.created_date',
-//                    'format'   => 'd/m/Y',
-//                    'editable' => true,
-//                )
-//            )
-//            ->add(
-//                'imageName',
-//                null,
-//                array(
-//                    'label' => 'backend.admin.image_name',
-//                )
-//            )
-//            ->add(
-//                'alt',
-//                null,
-//                array(
-//                    'label'    => 'backend.admin.alt',
-//                    'editable' => true,
-//                )
-//            )
-//            ->add(
-//                'enabled',
-//                null,
-//                array(
-//                    'label'    => 'backend.admin.enabled',
-//                    'editable' => true,
-//                )
-//            )
-//            ->add(
-//                '_action',
-//                'actions',
-//                array(
-//                    'label'   => 'backend.admin.actions',
-//                    'actions' => array(
-//                        'show'   => array(),
-//                        'edit'   => array(),
-//                        'delete' => array(),
-//                    ),
-//                )
-//            );
-//    }
+    /**
+     * @param ListMapper $listMapper
+     */
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        unset($this->listModes['mosaic']);
+        $listMapper
+            ->add(
+                'createdAt',
+                'date',
+                array(
+                    'label'    => 'Data creació',
+                    'format'   => 'd/m/Y',
+                    'editable' => true,
+                )
+            )
+            ->add(
+                'image1Name',
+                null,
+                array(
+                    'label' => 'Imatge',
+                )
+            )
+            ->add(
+                'enabled',
+                null,
+                array(
+                    'label'    => 'Actiu',
+                    'editable' => true,
+                )
+            )
+            ->add(
+                '_action',
+                'actions',
+                array(
+                    'label'   => 'Accions',
+                    'actions' => array(
+                        'show'   => array(),
+                        'edit'   => array(),
+                        'delete' => array(),
+                    ),
+                )
+            );
+    }
 }
 

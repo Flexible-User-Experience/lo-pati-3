@@ -11,7 +11,7 @@ services:
         class: AppBundle\Admin\PageImageAdmin
         arguments: [ ~, AppBundle\Entity\PageImage, ~ ]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: "Imatge", group: "Image", }
+            - { name: sonata.admin, manager_type: orm, label: "Imatge", group: "Page", }
 
     admin.setting:
         class: AppBundle\Admin\SettingAdmin
