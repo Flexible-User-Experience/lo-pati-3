@@ -30,24 +30,24 @@ class PageImageAdmin extends AbstractBaseAdmin
         $formMapper
             ->with('Imatge', $this->getFormMdSuccessBoxArray(6))
             ->add(
-                'image1Name',
+                'page',
                 null,
                 array(
-//                    'attr' => array(
-//                        'hidden' => true,
-//                    ),
+                    'attr' => array(
+                        'hidden' => true,
+                    ),
                 )
             )
-//            ->add(
-//                'imageFile',
-//                'file',
-//                array(
-//                    'label'       => 'backend.admin.image_name',
-//                    'required'    => false,
-//                    'help'        => $this->getImageHelperFormMapperWithThumbnail(),
-//                    'sonata_help' => $this->getImageHelperFormMapperWithThumbnail(),
-//                )
-//            )
+            ->add(
+                'imageFile',
+                'file',
+                array(
+                    'label'       => 'backend.admin.image_name',
+                    'required'    => false,
+                    'help'        => $this->getImageHelperFormMapperWithThumbnail(),
+                    'sonata_help' => $this->getImageHelperFormMapperWithThumbnail(),
+                )
+            )
             ->end()
             ->with('Controls', $this->getFormMdSuccessBoxArray(6))
             ->add(

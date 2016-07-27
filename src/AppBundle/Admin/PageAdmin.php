@@ -208,7 +208,29 @@ class PageAdmin extends AbstractBaseAdmin
                 )
             )
             ->end();
+        if ($this->id($this->getSubject())) { // is edit mode, disable on new subjects
+            $formMapper
+                ->with('Imatges', $this->getFormMdSuccessBoxArray(12))
+                ->add(
+                    'pageImages',
+                    'sonata_type_collection',
+                    array(
+                        'label'              => ' ',
+                        'required'           => false,
+                        'cascade_validation' => true,
+                    ),
+                    array(
+                        'edit'     => 'inline',
+                        'inline'   => 'table',
+                        'sortable' => 'position',
+                    )
+                )
+                ->end()
+                ->setHelps(
+                    array('pageImages' => 'up to 10MB with format PNG, JPG or GIF. min. width 1200px.')
+                );
         }
+    }
 
     /**
      * @param DatagridMapper $datagridMapper

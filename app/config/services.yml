@@ -2,55 +2,54 @@ services:
 # Sonata Admin
     admin.page:
         class: AppBundle\Admin\PageAdmin
-        arguments: [ ~, AppBundle\Entity\Page, ~ ]
+        arguments: [ ~, AppBundle\Entity\Page, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Pàgina", group: "Page" }
 
-# Sonata Admin
     admin.pageImage:
         class: AppBundle\Admin\PageImageAdmin
-        arguments: [ ~, AppBundle\Entity\PageImage, ~ ]
+        arguments: [ ~, AppBundle\Entity\PageImage, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: "Imatge", group: "Page", }
+            - { name: sonata.admin, manager_type: orm, label: "Imatge", group: "Page", show_in_dashboard: false }
 
     admin.setting:
         class: AppBundle\Admin\SettingAdmin
-        arguments: [ ~, AppBundle\Entity\Setting, ~ ]
+        arguments: [ ~, AppBundle\Entity\Setting, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Configuració", group: "Setting" }
 
     admin.sliderImage:
         class: AppBundle\Admin\SliderImageAdmin
-        arguments: [ ~, AppBundle\Entity\SliderImage, ~ ]
+        arguments: [ ~, AppBundle\Entity\SliderImage, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Slider", group: "Page" }
 
     admin.archive:
         class: AppBundle\Admin\ArchiveAdmin
-        arguments: [ ~, AppBundle\Entity\Archive, ~ ]
+        arguments: [ ~, AppBundle\Entity\Archive, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Arxiu", group: "Page" }
 
     admin.workingDaySetting:
         class: AppBundle\Admin\WorkingDaySettingAdmin
-        arguments: [ ~, AppBundle\Entity\WorkingDaySetting, ~ ]
+        arguments: [ ~, AppBundle\Entity\WorkingDaySetting, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Configuració Dies Laborals", group: "Setting" }
 
     admin.artist:
         class: AppBundle\Admin\ArtistAdmin
-        arguments: [ ~, AppBundle\Entity\Artist, ~ ]
+        arguments: [ ~, AppBundle\Entity\Artist, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Artista", group: "Page" }
 
     admin.menuLevel1:
         class: AppBundle\Admin\MenuLevel1Admin
-        arguments: [ ~, AppBundle\Entity\MenuLevel1, ~ ]
+        arguments: [ ~, AppBundle\Entity\MenuLevel1, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Categoria", group: "Page" }
 
     admin.menuLevel2:
         class: AppBundle\Admin\MenuLevel2Admin
-        arguments: [ ~, AppBundle\Entity\MenuLevel2, ~ ]
+        arguments: [ ~, AppBundle\Entity\MenuLevel2, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Subcategoria", group: "Page" }
