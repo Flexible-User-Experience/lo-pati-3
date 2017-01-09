@@ -19,6 +19,7 @@ Trait Image1Trait
 {
     /**
      * @var string
+     *
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image1Name;

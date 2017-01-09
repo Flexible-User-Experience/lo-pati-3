@@ -49,18 +49,21 @@ class Artist extends AbstractBase
     
     /**
      * @var string
+     *
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image3;
 
     /**
      * @var string
+     *
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image4;
 
     /**
      * @var string
+     *
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image5;
