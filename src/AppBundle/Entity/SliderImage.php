@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class SliderImage
  * 
  * @category Entity
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  * @package  AppBundle\Entity
  * 
  * @ORM\Table()

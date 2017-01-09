@@ -113,7 +113,11 @@ liip_imagine:
 vich_uploader:
     db_driver: orm
     mappings:
-        post:
+        archive:
             uri_prefix:         /uploads/images/archive
-            upload_destination: '%kernel.root_dir%/../web/uploads/images/post'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/archive'
+            namer:              vich_uploader.namer_uniqid
+        artist:
+            uri_prefix:         /uploads/images/artist
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/artist'
             namer:              vich_uploader.namer_uniqid

@@ -11,16 +11,20 @@ use AppBundle\Entity\Traits\NameTrait;
 use AppBundle\Entity\Traits\SummaryTrait;
 use AppBundle\Entity\Traits\YearTrait;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Class Artist
  * 
  * @category Entity
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  * @package  AppBundle\Entity
  * 
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ArtistRepository")
+ * @Vich\Uploadable
  */
 class Artist extends AbstractBase
 {
@@ -32,6 +36,30 @@ class Artist extends AbstractBase
     use Image2Trait;
     use Document1Trait;
     use LinkTrait;
+
+    /**
+     * @var File
+     *
+     * @Vich\UploadableField(mapping="artist", fileNameProperty="image1Name")
+     * @Assert\File(
+     *     maxSize="10M",
+     *     mimeTypes={"image/jpg", "image/jpeg", "image/png", "image/gif"}
+     * )
+     * @Assert\Image(minWidth=1200)
+     */
+    private $image1File;
+
+    /**
+     * @var File
+     *
+     * @Vich\UploadableField(mapping="artist", fileNameProperty="image2Name")
+     * @Assert\File(
+     *     maxSize="10M",
+     *     mimeTypes={"image/jpg", "image/jpeg", "image/png", "image/gif"}
+     * )
+     * @Assert\Image(minWidth=1200)
+     */
+    private $image2File;
 
     /**
      * @var string

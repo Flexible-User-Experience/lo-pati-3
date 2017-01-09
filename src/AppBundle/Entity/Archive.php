@@ -7,16 +7,19 @@ use AppBundle\Entity\Traits\Image2Trait;
 use AppBundle\Entity\Traits\YearTrait;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Class Archive
  * 
  * @category Entity
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  * @package  AppBundle\Entity
  * 
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ArchiveRepository")
+ * @Vich\Uploadable
  */
 class Archive extends AbstractBase
 {

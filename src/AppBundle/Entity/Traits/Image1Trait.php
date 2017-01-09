@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\File\File;
  *
  * @category Trait
  * @package  AppBundle\Entity\Traits
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
 Trait Image1Trait
 {
@@ -33,6 +33,8 @@ Trait Image1Trait
      */
 
     /**
+     * Get image1File
+     *
      * @return File|UploadedFile
      */
     public function getImage1File()
@@ -41,6 +43,8 @@ Trait Image1Trait
     }
 
     /**
+     * Set image1File
+     *
      * @param File|UploadedFile $image1File
      *
      * @return $this
@@ -58,6 +62,8 @@ Trait Image1Trait
     }
     
     /**
+     * Get image1Name
+     *
      * @return string
      */
     public function getImage1Name()

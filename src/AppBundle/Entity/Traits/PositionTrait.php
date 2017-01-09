@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @category Trait
  * @package  AppBundle\Entity\Traits
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
 Trait PositionTrait
 {

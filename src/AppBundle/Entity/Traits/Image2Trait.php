@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\File\File;
  *
  * @category Trait
  * @package  AppBundle\Entity\Traits
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
 Trait Image2Trait
 {
