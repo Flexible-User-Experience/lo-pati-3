@@ -47,11 +47,22 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image2Name',
-                null,
+                'image2File',
+                'file',
                 array(
-                    'label'    => 'Nom Imatge 2',
-                    'required' => true,
+                    'label'    => 'Imatge 2',
+                    'help'     => $this->getImage2HelperFormMapperWithThumbnail(),
+                    'required' => false,
+                )
+            )
+            ->end()
+            ->with('Controls', $this->getFormMdSuccessBoxArray(4))
+            ->add(
+                'enabled',
+                'checkbox',
+                array(
+                    'label'    => 'Actiu',
+                    'required' => false,
                 )
             )
             ->end()
@@ -72,17 +83,10 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image1Name',
+                'enabled',
                 null,
                 array(
-                    'label' => 'Nom Imatge 1',
-                )
-            )
-            ->add(
-                'image2Name',
-                null,
-                array(
-                    'label' => 'Nom Imatge 2',
+                    'label' => 'Actiu',
                 )
             )
         ;
@@ -107,16 +111,24 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 'image1Name',
                 null,
                 array(
-                    'label'    => 'Nom Imatge 1',
-                    'template' => '::Admin/Cells/list__cell_image_field.html.twig'
+                    'label'    => 'Imatge 1',
+                    'template' => '::Admin/Cells/list__cell_image1_field.html.twig'
                 )
             )
             ->add(
                 'image2Name',
                 null,
                 array(
-                    'label'    => 'Nom Imatge 2',
-                    'template' => '::Admin/Cells/list__cell_image_field.html.twig'
+                    'label'    => 'Imatge 2',
+                    'template' => '::Admin/Cells/list__cell_image2_field.html.twig'
+                )
+            )
+            ->add(
+                'enabled',
+                null,
+                array(
+                    'label'    => 'Actiu',
+                    'editable' => true,
                 )
             )
             ->add(

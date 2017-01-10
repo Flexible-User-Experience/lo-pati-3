@@ -125,4 +125,17 @@ abstract class AbstractBaseAdmin extends AbstractAdmin
                 '480xY'
             ) . '" class="admin-preview img-responsive" alt="thumbnail"/>' : '' : '') . '<span style="width:100%;display:block;">Fins a 10MB amb format PNG, JPG or GIF. Amplada mínima 1200px.</span>';
     }
+
+    /**
+     * Get image helper form mapper with thumbnail
+     *
+     * @return string
+     */
+    protected function getImage2HelperFormMapperWithThumbnail()
+    {
+        return ($this->getSubject() ? $this->getSubject()->getImage2Name() ? '<img src="' . $this->lis->getBrowserPath(
+                $this->vus->asset($this->getSubject(), 'image2File'),
+                '480xY'
+            ) . '" class="admin-preview img-responsive" alt="thumbnail"/>' : '' : '') . '<span style="width:100%;display:block;">Fins a 10MB amb format PNG, JPG or GIF. Amplada mínima 1200px.</span>';
+    }
 }
