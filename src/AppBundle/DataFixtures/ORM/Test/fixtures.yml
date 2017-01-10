@@ -91,3 +91,15 @@ AppBundle\Entity\MenuLevel2:
     position: <current()>
     isList: <boolean(10)>
     menuLevel1: @menuLevel1<numberBetween(1, 2)>
+
+## Users
+AppBundle\Entity\User:
+    admin:
+        username: <{private_admin_test_user}>
+        plainPassword: <{private_admin_test_pass}>
+        email: <safeEmail()>
+        firstname: <name()>
+        lastname: <lastname()>
+        enabled: true
+        roles:
+            - ROLE_SUPER_ADMIN
