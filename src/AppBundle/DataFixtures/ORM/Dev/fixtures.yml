@@ -55,8 +55,8 @@ AppBundle\Entity\Archive:
   archive{1..20}:
     year: <year()>
     enabled: <boolean(90)>
-    image1Name: <name()>
-    image2Name: <name()>
+#    image1Name: <name()>
+#    image2Name: <name()>
 
 # Artist
 AppBundle\Entity\Artist:

@@ -5,16 +5,13 @@ namespace AppBundle\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\AdminBundle\Route\RouteCollection;
-use Sonata\CoreBundle\Form\Type\DatePickerType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
  * Class ArchiveAdmin
  *
  * @category Admin
  * @package  AppBundle\Admin
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
 class ArchiveAdmin extends AbstractBaseAdmin
 {
@@ -41,11 +38,12 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image1Name',
-                null,
+                'image1File',
+                'file',
                 array(
-                    'label'    => 'Nom Imatge 1',
-                    'required' => true,
+                    'label'    => 'Imatge 1',
+                    'help'     => $this->getImage1HelperFormMapperWithThumbnail(),
+                    'required' => false,
                 )
             )
             ->add(
@@ -110,7 +108,7 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label'    => 'Nom Imatge 1',
-                    'editable' => true,
+                    'template' => '::Admin/Cells/list__cell_image_field.html.twig'
                 )
             )
             ->add(
@@ -118,7 +116,7 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label'    => 'Nom Imatge 2',
-                    'editable' => true,
+                    'template' => '::Admin/Cells/list__cell_image_field.html.twig'
                 )
             )
             ->add(

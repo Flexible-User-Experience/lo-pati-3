@@ -16,29 +16,29 @@ use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
  */
 abstract class AbstractBaseAdmin extends AbstractAdmin
 {
-//    /**
-//     * @var UploaderHelper
-//     */
-//    protected $vus;
-//
-//    /**
-//     * @var CacheManager
-//     */
-//    protected $lis;
+    /**
+     * @var UploaderHelper
+     */
+    protected $vus;
 
-//    /**
-//     * @param string             $code
-//     * @param string             $class
-//     * @param string             $baseControllerName
-//     * @param UploaderHelper     $vus
-//     * @param CacheManager       $lis
-//     */
-//    public function __construct($code, $class, $baseControllerName, WindmillRepository $wmr, WindfarmRepository $wfr, BladeRepository $br, TurbineRepository $tr, StateRepository $sr, UploaderHelper $vus, CacheManager $lis)
-//    {
-//        parent::__construct($code, $class, $baseControllerName);
-//        $this->vus = $vus;
-//        $this->lis = $lis;
-//    }
+    /**
+     * @var CacheManager
+     */
+    protected $lis;
+
+    /**
+     * @param string             $code
+     * @param string             $class
+     * @param string             $baseControllerName
+     * @param UploaderHelper     $vus
+     * @param CacheManager       $lis
+     */
+    public function __construct($code, $class, $baseControllerName, UploaderHelper $vus, CacheManager $lis)
+    {
+        parent::__construct($code, $class, $baseControllerName);
+        $this->vus = $vus;
+        $this->lis = $lis;
+    }
 
     /**
      * @var array
@@ -118,10 +118,10 @@ abstract class AbstractBaseAdmin extends AbstractAdmin
      *
      * @return string
      */
-    protected function getImageHelperFormMapperWithThumbnail()
+    protected function getImage1HelperFormMapperWithThumbnail()
     {
-        return ($this->getSubject() ? $this->getSubject()->getImageName() ? '<img src="' . $this->lis->getBrowserPath(
-                $this->vus->asset($this->getSubject(), 'imageFile'),
+        return ($this->getSubject() ? $this->getSubject()->getImage1Name() ? '<img src="' . $this->lis->getBrowserPath(
+                $this->vus->asset($this->getSubject(), 'image1File'),
                 '480xY'
             ) . '" class="admin-preview img-responsive" alt="thumbnail"/>' : '' : '') . '<span style="width:100%;display:block;">Fins a 10MB amb format PNG, JPG or GIF. Amplada mínima 1200px.</span>';
     }
