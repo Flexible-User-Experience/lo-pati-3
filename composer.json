@@ -29,11 +29,10 @@
         "stof/doctrine-extensions-bundle": "^1.2",
         "incenteev/composer-parameter-handler": "~2.0",
         "vich/uploader-bundle": "^1.1",
-        "liip/imagine-bundle": "^1.5"
+        "liip/imagine-bundle": "1.6.0"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~3.0",
-        "symfony/phpunit-bridge": "~2.7"
+        "sensio/generator-bundle": "~3.0"
     },
     "scripts": {
         "post-install-cmd": [

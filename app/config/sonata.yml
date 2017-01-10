@@ -5,6 +5,12 @@ sonata_block:
         sonata.admin.block.admin_list:  ~
         sonata.user.block.menu:         ~
         sonata.block.service.text:      ~
+
+# Sonata User
+sonata_user:
+    security_acl: true
+    manager_type: orm
+
 # Admin
 sonata_admin:
     title: "%project_web_title%"
@@ -15,8 +21,8 @@ sonata_admin:
         use_select2:    true
         pager_links:    10
     persist_filters: true
-#    security:
-#        handler: sonata.admin.security.handler.role
+    security:
+        handler: sonata.admin.security.handler.role
     templates:
         layout: "::Admin/layout.html.twig"
 #        edit:   "::Admin/edit.html.twig"

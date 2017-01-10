@@ -26,3 +26,5 @@ parameters:
 
     private_admin_test_user: admin
     private_admin_test_pass: admin
+    private_admin_prod_user: user
+    private_admin_prod_pass: pass
