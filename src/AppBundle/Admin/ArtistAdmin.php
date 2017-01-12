@@ -64,14 +64,6 @@ class ArtistAdmin extends AbstractBaseAdmin
                     'required' => true,
                 )
             )
-            ->add(
-                'link',
-                null,
-                array(
-                    'label'    => 'Url',
-                    'required' => false,
-                )
-            )
             ->end()
             ->with('Noms Imatges', $this->getFormMdSuccessBoxArray(3))
             ->add(
@@ -138,10 +130,18 @@ class ArtistAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'document1Name',
+                'link',
                 null,
                 array(
-                    'label'    => 'Nom del Document',
+                    'label'    => 'Url',
+                    'required' => false,
+                )
+            )
+            ->add(
+                'document1File',
+                'file',
+                array(
+                    'label'    => 'Document',
                     'required' => false,
                 )
             )
