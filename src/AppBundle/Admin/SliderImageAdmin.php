@@ -5,9 +5,6 @@ namespace AppBundle\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\AdminBundle\Route\RouteCollection;
-use Sonata\CoreBundle\Form\Type\DatePickerType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
  * Class SliderImageAdmin
@@ -19,9 +16,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 class SliderImageAdmin extends AbstractBaseAdmin
 {
     protected $classnameLabel = 'Slider';
-    protected $baseRoutePattern = 'pages/sliderImage';
+    protected $baseRoutePattern = 'pages/slider-image';
     protected $datagridValues = array(
-        '_sort_by'    => 'name',
+        '_sort_by'    => 'position',
         '_sort_order' => 'asc',
     );
 
@@ -45,25 +42,28 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label'    => 'Alt Nom',
-                    'required' => true,
-                )
-            )
-            ->add(
-                'description',
-                null,
-                array(
-                    'label'    => 'Descripció',
-                    'required' => true,
+                    'required' => false,
                 )
             )
             ->end()
-            ->with('Altres', $this->getFormMdSuccessBoxArray(6))
+            ->with('Imatges', $this->getFormMdSuccessBoxArray(3))
+            ->add(
+                'image1File',
+                'file',
+                array(
+                    'label'    => 'Imatge 1',
+                    'help'     => $this->getImage1HelperFormMapperWithThumbnail(),
+                    'required' => false,
+                )
+            )
+            ->end()
+            ->with('Controls', $this->getFormMdSuccessBoxArray(3))
             ->add(
                 'link',
                 null,
                 array(
                     'label'    => 'Url',
-                    'required' => true,
+                    'required' => false,
                 )
             )
             ->add(
@@ -75,11 +75,11 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image',
-                null,
+                'enabled',
+                'checkbox',
                 array(
-                    'label'    => 'Imatge',
-                    'required' => true,
+                    'label'    => 'Actiu',
+                    'required' => false,
                 )
             )
             ->end()
@@ -107,13 +107,6 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'description',
-                null,
-                array(
-                    'label' => 'Descripció',
-                )
-            )
-            ->add(
                 'link',
                 null,
                 array(
@@ -128,10 +121,10 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image',
+                'enabled',
                 null,
                 array(
-                    'label' => 'Imatge',
+                    'label' => 'Actiu',
                 )
             )
         ;
@@ -145,11 +138,11 @@ class SliderImageAdmin extends AbstractBaseAdmin
         unset($this->listModes['mosaic']);
         $listMapper
             ->add(
-                'position',
+                'image1Name',
                 null,
                 array(
-                    'label'    => 'Posició',
-                    'editable' => true,
+                    'label'    => 'Imatge',
+                    'template' => '::Admin/Cells/list__cell_image1_field.html.twig'
                 )
             )
             ->add(
@@ -169,10 +162,18 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image',
+                'position',
                 null,
                 array(
-                    'label'    => 'Imatge',
+                    'label'    => 'Posició',
+                    'editable' => true,
+                )
+            )
+            ->add(
+                'enabled',
+                null,
+                array(
+                    'label'    => 'Actiu',
                     'editable' => true,
                 )
             )

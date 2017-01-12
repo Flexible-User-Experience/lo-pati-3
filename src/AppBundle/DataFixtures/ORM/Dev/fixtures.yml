@@ -44,19 +44,18 @@ AppBundle\Entity\SliderImage:
   sliderImage{1..20}:
     name: <name()>
     altName: <name()>
-    description: <sentence(10)>
     link: <url()>
     position: <current()>
     enabled: <boolean(90)>
-    image: <name()>
+    image1Name: <name()>
 
 # Archive
 AppBundle\Entity\Archive:
   archive{1..20}:
     year: <year()>
     enabled: <boolean(90)>
-    image1Name: <name()>
-    image2Name: <name()>
+#    image1Name: <name()>
+#    image2Name: <name()>
 
 # Artist
 AppBundle\Entity\Artist:
@@ -70,9 +69,9 @@ AppBundle\Entity\Artist:
     enabled: <boolean(90)>
     image1Name: <name()>
     image2Name: <name()>
-    image3: <name()>
-    image4: <name()>
-    image5: <name()>
+    image3Name: <name()>
+    image4Name: <name()>
+    image5Name: <name()>
     link: <url()>
     document1Name: <word()>
 
@@ -91,3 +90,42 @@ AppBundle\Entity\MenuLevel2:
     position: <current()>
     isList: <boolean(10)>
     menuLevel1: @menuLevel1<numberBetween(1, 5)>
+
+## Users
+AppBundle\Entity\User:
+    admin:
+        username: <{private_admin_prod_user}>
+        plainPassword: <{private_admin_prod_pass}>
+        email: <safeEmail()>
+        firstname: <name()>
+        lastname: <lastname()>
+        enabled: true
+        roles:
+            - ROLE_SUPER_ADMIN
+#    editor:
+#        username: <{private_editor_test_user}>
+#        plainPassword: <{private_editor_test_pass}>
+#        email: <safeEmail()>
+#        firstname: <name()>
+#        lastname: <lastname()>
+#        enabled: true
+#        roles:
+#            - ROLE_CMS
+    cms{1..4}:
+        username: <username()>
+        plainPassword: <password()>
+        email: <safeEmail()>
+        firstname: <name()>
+        lastname: <lastname()>
+        enabled: true
+        roles:
+            - ROLE_CMS
+    manager{1..2}:
+        username: <username()>
+        plainPassword: <password()>
+        email: <safeEmail()>
+        firstname: <name()>
+        lastname: <lastname()>
+        enabled: true
+        roles:
+            - ROLE_ADMIN

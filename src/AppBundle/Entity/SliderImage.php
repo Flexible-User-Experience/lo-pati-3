@@ -3,25 +3,30 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Entity\Traits\DescriptionTrait;
+use AppBundle\Entity\Traits\Image1Trait;
 use AppBundle\Entity\Traits\LinkTrait;
 use AppBundle\Entity\Traits\NameTrait;
 use AppBundle\Entity\Traits\PositionTrait;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class SliderImage
  * 
  * @category Entity
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  * @package  AppBundle\Entity
  * 
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Repository\SliderImageRepository")
+ * @Vich\Uploadable
  */
 class SliderImage extends AbstractBase
 {
+    use Image1Trait;
     use NameTrait;
-    use DescriptionTrait;
     use PositionTrait;
     use LinkTrait;
     
@@ -30,12 +35,18 @@ class SliderImage extends AbstractBase
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $altName;
-    
+
     /**
-     * @var string
-     * @ORM\Column(type="string", length=255)
+     * @var File
+     *
+     * @Vich\UploadableField(mapping="slider", fileNameProperty="image1Name")
+     * @Assert\File(
+     *     maxSize="10M",
+     *     mimeTypes={"image/jpg", "image/jpeg", "image/png", "image/gif"}
+     * )
+     * @Assert\Image(minWidth=1200)
      */
-    private $image;
+    private $image1File;
 
     /**
      *
@@ -61,26 +72,6 @@ class SliderImage extends AbstractBase
     public function setAltName($altName)
     {
         $this->altName = $altName;
-
-        return $this;
-    }
-    
-    /**
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * @param string $image
-     *
-     * @return SliderImage
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
 
         return $this;
     }

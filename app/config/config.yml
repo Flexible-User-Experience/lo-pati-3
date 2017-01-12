@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: sonata.yml }
+    - { resource: media.yml }
 
 framework:
     translator:      { fallbacks: ["%locale%"] }
@@ -44,7 +45,8 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
-
+        types:
+            json: Sonata\Doctrine\Types\JsonType
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
@@ -62,6 +64,17 @@ stof_doctrine_extensions:
             sortable:       false
             tree:           false
 
+# FOS User
+fos_user:
+    db_driver:      orm
+    firewall_name:  admin
+    user_class:     AppBundle\Entity\User
+    group:
+        group_class:   AppBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager
+    service:
+        user_manager: sonata.user.orm.user_manager
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
@@ -69,7 +82,3 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
-
-# Vich Uploader
-vich_uploader:
-    db_driver: orm # or mongodb or propel or phpcr

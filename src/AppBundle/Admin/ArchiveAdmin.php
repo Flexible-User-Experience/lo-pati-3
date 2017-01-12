@@ -5,16 +5,13 @@ namespace AppBundle\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\AdminBundle\Route\RouteCollection;
-use Sonata\CoreBundle\Form\Type\DatePickerType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
  * Class ArchiveAdmin
  *
  * @category Admin
  * @package  AppBundle\Admin
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
 class ArchiveAdmin extends AbstractBaseAdmin
 {
@@ -41,19 +38,31 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image1Name',
-                null,
+                'image1File',
+                'file',
                 array(
-                    'label'    => 'Nom Imatge 1',
-                    'required' => true,
+                    'label'    => 'Imatge 1',
+                    'help'     => $this->getImage1HelperFormMapperWithThumbnail(),
+                    'required' => false,
                 )
             )
             ->add(
-                'image2Name',
-                null,
+                'image2File',
+                'file',
                 array(
-                    'label'    => 'Nom Imatge 2',
-                    'required' => true,
+                    'label'    => 'Imatge 2',
+                    'help'     => $this->getImage2HelperFormMapperWithThumbnail(),
+                    'required' => false,
+                )
+            )
+            ->end()
+            ->with('Controls', $this->getFormMdSuccessBoxArray(4))
+            ->add(
+                'enabled',
+                'checkbox',
+                array(
+                    'label'    => 'Actiu',
+                    'required' => false,
                 )
             )
             ->end()
@@ -74,17 +83,10 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image1Name',
+                'enabled',
                 null,
                 array(
-                    'label' => 'Nom Imatge 1',
-                )
-            )
-            ->add(
-                'image2Name',
-                null,
-                array(
-                    'label' => 'Nom Imatge 2',
+                    'label' => 'Actiu',
                 )
             )
         ;
@@ -109,15 +111,23 @@ class ArchiveAdmin extends AbstractBaseAdmin
                 'image1Name',
                 null,
                 array(
-                    'label'    => 'Nom Imatge 1',
-                    'editable' => true,
+                    'label'    => 'Imatge 1',
+                    'template' => '::Admin/Cells/list__cell_image1_field.html.twig'
                 )
             )
             ->add(
                 'image2Name',
                 null,
                 array(
-                    'label'    => 'Nom Imatge 2',
+                    'label'    => 'Imatge 2',
+                    'template' => '::Admin/Cells/list__cell_image2_field.html.twig'
+                )
+            )
+            ->add(
+                'enabled',
+                null,
+                array(
+                    'label'    => 'Actiu',
                     'editable' => true,
                 )
             )

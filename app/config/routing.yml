@@ -11,5 +11,13 @@ _sonata_admin:
     type:     sonata_admin
     prefix:   /admin
 
+sonata_user_admin_security:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix:   /admin
+
+sonata_user_resetting:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_resetting_1.xml"
+    prefix: /resetting
+
 _liip_imagine:
     resource: "@LiipImagineBundle/Resources/config/routing.xml"
