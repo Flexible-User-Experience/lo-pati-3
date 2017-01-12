@@ -31,7 +31,7 @@ class ArtistAdmin extends AbstractBaseAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('General', $this->getFormMdSuccessBoxArray(7))
+            ->with('General', $this->getFormMdSuccessBoxArray(6))
             ->add(
                 'name',
                 null,
@@ -49,18 +49,10 @@ class ArtistAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'year',
+                'summary',
                 null,
                 array(
-                    'label'    => 'Any',
-                    'required' => true,
-                )
-            )
-            ->add(
-                'category',
-                null,
-                array(
-                    'label'    => 'Categoria',
+                    'label'    => 'Resum',
                     'required' => true,
                 )
             )
@@ -77,6 +69,71 @@ class ArtistAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label'    => 'Url',
+                    'required' => false,
+                )
+            )
+            ->end()
+            ->with('Noms Imatges', $this->getFormMdSuccessBoxArray(3))
+            ->add(
+                'image1File',
+                'file',
+                array(
+                    'label'    => 'Imatge 1',
+                    'help'     => $this->getImage1HelperFormMapperWithThumbnail(),
+                    'required' => false,
+                )
+            )
+            ->add(
+                'image2File',
+                'file',
+                array(
+                    'label'    => 'Imatge 2',
+                    'help'     => $this->getImage2HelperFormMapperWithThumbnail(),
+                    'required' => false,
+                )
+            )
+            ->add(
+                'image3File',
+                'file',
+                array(
+                    'label'    => 'Imatge 3',
+                    'help'     => $this->getImage3HelperFormMapperWithThumbnail(),
+                    'required' => false,
+                )
+            )
+            ->add(
+                'image4File',
+                'file',
+                array(
+                    'label'    => 'Imatge 4',
+                    'help'     => $this->getImage4HelperFormMapperWithThumbnail(),
+                    'required' => false,
+                )
+            )
+            ->add(
+                'image5File',
+                'file',
+                array(
+                    'label'    => 'Imatge 5',
+                    'help'     => $this->getImage5HelperFormMapperWithThumbnail(),
+                    'required' => false,
+                )
+            )
+            ->end()
+            ->with('Controls', $this->getFormMdSuccessBoxArray(3))
+            ->add(
+                'year',
+                null,
+                array(
+                    'label'    => 'Any',
+                    'required' => true,
+                )
+            )
+            ->add(
+                'category',
+                null,
+                array(
+                    'label'    => 'Categoria',
                     'required' => true,
                 )
             )
@@ -85,49 +142,15 @@ class ArtistAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label'    => 'Nom del Document',
-                    'required' => true,
-                )
-            )
-            ->end()
-            ->with('Noms Imatges', $this->getFormMdSuccessBoxArray(5))
-            ->add(
-                'image1Name',
-                null,
-                array(
-                    'label'    => 'Nom Imatge 1',
-                    'required' => true,
+                    'required' => false,
                 )
             )
             ->add(
-                'image1Name',
-                null,
+                'enabled',
+                'checkbox',
                 array(
-                    'label'    => 'Nom Imatge 2',
-                    'required' => true,
-                )
-            )
-            ->add(
-                'image3',
-                null,
-                array(
-                    'label'    => 'Imatge 3',
-                    'required' => true,
-                )
-            )
-            ->add(
-                'image4',
-                null,
-                array(
-                    'label'    => 'Imatge 4',
-                    'required' => true,
-                )
-            )
-            ->add(
-                'image5',
-                null,
-                array(
-                    'label'    => 'Imatge 5',
-                    'required' => true,
+                    'label'    => 'Actiu',
+                    'required' => false,
                 )
             )
             ->end()
@@ -184,41 +207,6 @@ class ArtistAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image1Name',
-                null,
-                array(
-                    'label' => 'Nom Imatge 1',
-                )
-            )
-            ->add(
-                'image2Name',
-                null,
-                array(
-                    'label' => 'Nom Imatge 2',
-                )
-            )
-            ->add(
-                'image3',
-                null,
-                array(
-                    'label' => 'Imatge 3',
-                )
-            )
-            ->add(
-                'image4',
-                null,
-                array(
-                    'label' => 'Imatge 4',
-                )
-            )
-            ->add(
-                'image5',
-                null,
-                array(
-                    'label' => 'Imatge 5',
-                )
-            )
-            ->add(
                 'link',
                 null,
                 array(
@@ -226,10 +214,10 @@ class ArtistAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'document1Name',
+                'enabled',
                 null,
                 array(
-                    'label' => 'Nom del Document',
+                    'label' => 'Actiu',
                 )
             )
         ;
@@ -242,6 +230,14 @@ class ArtistAdmin extends AbstractBaseAdmin
     {
         unset($this->listModes['mosaic']);
         $listMapper
+            ->add(
+                'image1Name',
+                null,
+                array(
+                    'label'    => 'Imatge 1',
+                    'template' => '::Admin/Cells/list__cell_image1_field.html.twig'
+                )
+            )
             ->add(
                 'name',
                 null,
@@ -275,42 +271,10 @@ class ArtistAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image1Name',
+                'enabled',
                 null,
                 array(
-                    'label'    => 'Nom Image 1',
-                    'editable' => true,
-                )
-            )
-            ->add(
-                'image2Name',
-                null,
-                array(
-                    'label'    => 'Nom Image 2',
-                    'editable' => true,
-                )
-            )
-            ->add(
-                'image3',
-                null,
-                array(
-                    'label'    => 'Image 3',
-                    'editable' => true,
-                )
-            )
-            ->add(
-                'image4',
-                null,
-                array(
-                    'label'    => 'Image 4',
-                    'editable' => true,
-                )
-            )
-            ->add(
-                'image5',
-                null,
-                array(
-                    'label'    => 'Image 5',
+                    'label'    => 'Actiu',
                     'editable' => true,
                 )
             )

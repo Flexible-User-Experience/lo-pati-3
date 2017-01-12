@@ -6,6 +6,9 @@ use AppBundle\Entity\Traits\DescriptionTrait;
 use AppBundle\Entity\Traits\Document1Trait;
 use AppBundle\Entity\Traits\Image1Trait;
 use AppBundle\Entity\Traits\Image2Trait;
+use AppBundle\Entity\Traits\Image3Trait;
+use AppBundle\Entity\Traits\Image4Trait;
+use AppBundle\Entity\Traits\Image5Trait;
 use AppBundle\Entity\Traits\LinkTrait;
 use AppBundle\Entity\Traits\NameTrait;
 use AppBundle\Entity\Traits\SummaryTrait;
@@ -34,6 +37,9 @@ class Artist extends AbstractBase
     use DescriptionTrait;
     use Image1Trait;
     use Image2Trait;
+    use Image3Trait;
+    use Image4Trait;
+    use Image5Trait;
     use Document1Trait;
     use LinkTrait;
 
@@ -62,6 +68,42 @@ class Artist extends AbstractBase
     private $image2File;
 
     /**
+     * @var File
+     *
+     * @Vich\UploadableField(mapping="artist", fileNameProperty="image3Name")
+     * @Assert\File(
+     *     maxSize="10M",
+     *     mimeTypes={"image/jpg", "image/jpeg", "image/png", "image/gif"}
+     * )
+     * @Assert\Image(minWidth=1200)
+     */
+    private $image3File;
+
+    /**
+     * @var File
+     *
+     * @Vich\UploadableField(mapping="artist", fileNameProperty="image4Name")
+     * @Assert\File(
+     *     maxSize="10M",
+     *     mimeTypes={"image/jpg", "image/jpeg", "image/png", "image/gif"}
+     * )
+     * @Assert\Image(minWidth=1200)
+     */
+    private $image4File;
+
+    /**
+     * @var File
+     *
+     * @Vich\UploadableField(mapping="artist", fileNameProperty="image5Name")
+     * @Assert\File(
+     *     maxSize="10M",
+     *     mimeTypes={"image/jpg", "image/jpeg", "image/png", "image/gif"}
+     * )
+     * @Assert\Image(minWidth=1200)
+     */
+    private $image5File;
+
+    /**
      * @var string
      *
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -74,27 +116,6 @@ class Artist extends AbstractBase
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $category;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $image3;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $image4;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $image5;
 
     /**
      *
@@ -140,66 +161,6 @@ class Artist extends AbstractBase
     public function setCategory($category)
     {
         $this->category = $category;
-        
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getImage3()
-    {
-        return $this->image3;
-    }
-
-    /**
-     * @param string $image3
-     * 
-     * @return Artist
-     */
-    public function setImage3($image3)
-    {
-        $this->image3 = $image3;
-        
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getImage4()
-    {
-        return $this->image4;
-    }
-
-    /**
-     * @param string $image4
-     * 
-     * @return Artist
-     */
-    public function setImage4($image4)
-    {
-        $this->image4 = $image4;
-        
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getImage5()
-    {
-        return $this->image5;
-    }
-
-    /**
-     * @param string $image5
-     * 
-     * @return Artist
-     */
-    public function setImage5($image5)
-    {
-        $this->image5 = $image5;
         
         return $this;
     }

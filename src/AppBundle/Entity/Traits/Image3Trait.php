@@ -9,19 +9,19 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\File;
 
 /**
- * Image2 trait
+ * Image3 trait
  *
  * @category Trait
  * @package  AppBundle\Entity\Traits
  * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
-Trait Image2Trait
+Trait Image3Trait
 {
     /**
      * @var string
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $image2Name;
+    private $image3Name;
 
     /**
      *
@@ -32,26 +32,26 @@ Trait Image2Trait
      */
 
     /**
-     * Get image2File
+     * Get image3File
      *
      * @return File|UploadedFile
      */
-    public function getImage2File()
+    public function getImage3File()
     {
-        return $this->image2File;
+        return $this->image3File;
     }
 
     /**
-     * Set image2File
+     * Set image3File
      *
-     * @param File|UploadedFile $image2File
+     * @param File|UploadedFile $image3File
      *
      * @return $this
      */
-    public function setImage2File(File $image2File = null)
+    public function setImage3File(File $image3File = null)
     {
-        $this->image2File = $image2File;
-        if ($image2File) {
+        $this->image3File = $image3File;
+        if ($image3File) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
             $this->updatedAt = new \DateTime('now');
@@ -61,23 +61,23 @@ Trait Image2Trait
     }
     
     /**
-     * Get image2Name
+     * Get image3Name
      *
      * @return string
      */
-    public function getImage2Name()
+    public function getImage3Name()
     {
-        return $this->image2Name;
+        return $this->image3Name;
     }
 
     /**
-     * @param string $image2Name
+     * @param string $image3Name
      * 
-     * @return Image2Trait
+     * @return Image3Trait
      */
-    public function setImage2Name($image2Name)
+    public function setImage3Name($image3Name)
     {
-        $this->image2Name = $image2Name;
+        $this->image3Name = $image3Name;
         
         return $this;
     }

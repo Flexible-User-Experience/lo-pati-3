@@ -70,9 +70,9 @@ AppBundle\Entity\Artist:
     enabled: <boolean(90)>
     image1Name: <name()>
     image2Name: <name()>
-    image3: <name()>
-    image4: <name()>
-    image5: <name()>
+    image3Name: <name()>
+    image4Name: <name()>
+    image5Name: <name()>
     link: <url()>
     document1Name: <word()>
 
