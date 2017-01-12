@@ -48,7 +48,7 @@ AppBundle\Entity\SliderImage:
     link: <url()>
     position: <current()>
     enabled: <boolean(90)>
-    image: <name()>
+    image1Name: <name()>
 
 # Archive
 AppBundle\Entity\Archive:

@@ -145,10 +145,10 @@ class SliderImageAdmin extends AbstractBaseAdmin
         unset($this->listModes['mosaic']);
         $listMapper
             ->add(
-                'position',
+                'image1File',
                 null,
                 array(
-                    'label'    => 'Posició',
+                    'label'    => 'Imatge',
                     'editable' => true,
                 )
             )
@@ -169,10 +169,18 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image',
+                'position',
                 null,
                 array(
-                    'label'    => 'Imatge',
+                    'label'    => 'Posició',
+                    'editable' => true,
+                )
+            )
+            ->add(
+                'enabled',
+                null,
+                array(
+                    'label'    => 'backend.admin.enabled',
                     'editable' => true,
                 )
             )
