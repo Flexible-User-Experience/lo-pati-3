@@ -5,9 +5,6 @@ namespace AppBundle\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\AdminBundle\Route\RouteCollection;
-use Sonata\CoreBundle\Form\Type\DatePickerType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
  * Class SliderImageAdmin
@@ -19,9 +16,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 class SliderImageAdmin extends AbstractBaseAdmin
 {
     protected $classnameLabel = 'Slider';
-    protected $baseRoutePattern = 'pages/sliderImage';
+    protected $baseRoutePattern = 'pages/slider-image';
     protected $datagridValues = array(
-        '_sort_by'    => 'name',
+        '_sort_by'    => 'position',
         '_sort_order' => 'asc',
     );
 
@@ -128,10 +125,10 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image',
+                'enabled',
                 null,
                 array(
-                    'label' => 'Imatge',
+                    'label' => 'Actiu',
                 )
             )
         ;
@@ -145,11 +142,11 @@ class SliderImageAdmin extends AbstractBaseAdmin
         unset($this->listModes['mosaic']);
         $listMapper
             ->add(
-                'image1File',
+                'image1Name',
                 null,
                 array(
                     'label'    => 'Imatge',
-                    'editable' => true,
+                    'template' => '::Admin/Cells/list__cell_image1_field.html.twig'
                 )
             )
             ->add(
@@ -180,7 +177,7 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 'enabled',
                 null,
                 array(
-                    'label'    => 'backend.admin.enabled',
+                    'label'    => 'Actiu',
                     'editable' => true,
                 )
             )
