@@ -63,6 +63,7 @@ class BackendControllerTest extends AbstractBaseTest
             array('/admin/pages/slider-image/create'),
             array('/admin/pages/slider-image/1/delete'),
             array('/admin/pages/slider-image/1/edit'),
+            array('/admin/pages/working-day-setting/list'),
 //            array('/admin/users/list'),
 //            array('/admin/users/create'),
 //            array('/admin/users/1/edit'),
