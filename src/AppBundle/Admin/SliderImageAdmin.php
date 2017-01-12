@@ -42,25 +42,28 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label'    => 'Alt Nom',
-                    'required' => true,
-                )
-            )
-            ->add(
-                'description',
-                null,
-                array(
-                    'label'    => 'Descripció',
-                    'required' => true,
+                    'required' => false,
                 )
             )
             ->end()
-            ->with('Altres', $this->getFormMdSuccessBoxArray(6))
+            ->with('Imatges', $this->getFormMdSuccessBoxArray(3))
+            ->add(
+                'image1File',
+                'file',
+                array(
+                    'label'    => 'Imatge 1',
+                    'help'     => $this->getImage1HelperFormMapperWithThumbnail(),
+                    'required' => false,
+                )
+            )
+            ->end()
+            ->with('Controls', $this->getFormMdSuccessBoxArray(3))
             ->add(
                 'link',
                 null,
                 array(
                     'label'    => 'Url',
-                    'required' => true,
+                    'required' => false,
                 )
             )
             ->add(
@@ -72,11 +75,11 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'image',
-                null,
+                'enabled',
+                'checkbox',
                 array(
-                    'label'    => 'Imatge',
-                    'required' => true,
+                    'label'    => 'Actiu',
+                    'required' => false,
                 )
             )
             ->end()
@@ -101,13 +104,6 @@ class SliderImageAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label' => 'Alt Nom',
-                )
-            )
-            ->add(
-                'description',
-                null,
-                array(
-                    'label' => 'Descripció',
                 )
             )
             ->add(

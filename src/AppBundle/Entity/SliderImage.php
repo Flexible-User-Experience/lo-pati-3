@@ -27,7 +27,6 @@ class SliderImage extends AbstractBase
 {
     use Image1Trait;
     use NameTrait;
-    use DescriptionTrait;
     use PositionTrait;
     use LinkTrait;
     
