@@ -121,3 +121,7 @@ vich_uploader:
             uri_prefix:         /uploads/images/artist
             upload_destination: '%kernel.root_dir%/../web/uploads/images/artist'
             namer:              vich_uploader.namer_uniqid
+        document_artist:
+            uri_prefix:         /uploads/documents/artist
+            upload_destination: '%kernel.root_dir%/../web/uploads/documents/artist'
+            namer:              vich_uploader.namer_uniqid

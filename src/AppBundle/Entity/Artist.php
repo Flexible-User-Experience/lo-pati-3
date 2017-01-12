@@ -104,6 +104,13 @@ class Artist extends AbstractBase
     private $image5File;
 
     /**
+     * @var File
+     *
+     * @Vich\UploadableField(mapping="document_artist", fileNameProperty="document1Name")
+     */
+    private $document1File;
+
+    /**
      * @var string
      *
      * @ORM\Column(type="string", length=255, nullable=true)
