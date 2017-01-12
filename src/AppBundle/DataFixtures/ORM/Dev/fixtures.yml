@@ -1,0 +1,131 @@
+# Page
+AppBundle\Entity\Page:
+  page{1..10}:
+    name: <name()>
+    description: <sentence()>
+    type: <word()>
+    summary: <sentence()>
+    front: <boolean(75)>
+    publishDate: <dateTimeThisMonth()>
+    visibleDate: <boolean(25)>
+    expirationDate: <dateTimeThisMonth()>
+    realizationDate: <word()>
+    place: <city()>
+    links: <imageUrl()>
+    share: <boolean(75)>
+    video: <word()>
+    urlVimeo: <imageUrl()>
+    urlFlickr: <imageUrl()>
+    image1Name: <word()>
+    image2Name: <word()>
+    largeFooterImage: <word()>
+    document1Name: <word()>
+    documentName2: <word()>
+    startDate: <dateTimeThisMonth()>
+    endDate: <dateTimeThisMonth()>
+
+# Setting
+AppBundle\Entity\Setting:
+  setting{1..100}:
+    address: <streetAddress()>
+    timetable: <iso8601()>
+    organizer: <name()>
+    collaborator: <name()>
+
+# WorkingDaySetting
+AppBundle\Entity\WorkingDaySetting:
+  workingDaySetting{1..7}:
+    weekdayNumber: <current()>
+    name: <dayOfWeek()>
+    enabled: <boolean(90)>
+
+# SliderImage
+AppBundle\Entity\SliderImage:
+  sliderImage{1..20}:
+    name: <name()>
+    altName: <name()>
+    link: <url()>
+    position: <current()>
+    enabled: <boolean(90)>
+    image1Name: <name()>
+
+# Archive
+AppBundle\Entity\Archive:
+  archive{1..20}:
+    year: <year()>
+    enabled: <boolean(90)>
+#    image1Name: <name()>
+#    image2Name: <name()>
+
+# Artist
+AppBundle\Entity\Artist:
+  artist{1..10}:
+    name: <name()>
+    city: <city()>
+    year: <year()>
+    category: <word()>
+    summary: <sentence()>
+    description: <sentence(10)>
+    enabled: <boolean(90)>
+    image1Name: <name()>
+    image2Name: <name()>
+    image3Name: <name()>
+    image4Name: <name()>
+    image5Name: <name()>
+    link: <url()>
+    document1Name: <word()>
+
+# MenuLevel1
+AppBundle\Entity\MenuLevel1:
+  menuLevel1{1..5}:
+    name: <name()>
+    position: <current()>
+    isArchive: <boolean(10)>
+    page: @page<numberBetween(1,10)>
+
+# MenuLevel2
+AppBundle\Entity\MenuLevel2:
+  menuLevel2{1..5}:
+    name: <name()>
+    position: <current()>
+    isList: <boolean(10)>
+    menuLevel1: @menuLevel1<numberBetween(1, 5)>
+
+## Users
+AppBundle\Entity\User:
+    admin:
+        username: <{private_admin_prod_user}>
+        plainPassword: <{private_admin_prod_pass}>
+        email: <safeEmail()>
+        firstname: <name()>
+        lastname: <lastname()>
+        enabled: true
+        roles:
+            - ROLE_SUPER_ADMIN
+#    editor:
+#        username: <{private_editor_test_user}>
+#        plainPassword: <{private_editor_test_pass}>
+#        email: <safeEmail()>
+#        firstname: <name()>
+#        lastname: <lastname()>
+#        enabled: true
+#        roles:
+#            - ROLE_CMS
+    cms{1..4}:
+        username: <username()>
+        plainPassword: <password()>
+        email: <safeEmail()>
+        firstname: <name()>
+        lastname: <lastname()>
+        enabled: true
+        roles:
+            - ROLE_CMS
+    manager{1..2}:
+        username: <username()>
+        plainPassword: <password()>
+        email: <safeEmail()>
+        firstname: <name()>
+        lastname: <lastname()>
+        enabled: true
+        roles:
+            - ROLE_ADMIN
