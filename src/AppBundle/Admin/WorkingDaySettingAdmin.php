@@ -10,7 +10,7 @@ use Sonata\AdminBundle\Route\RouteCollection;
  *
  * @category Admin
  * @package  AppBundle\Admin
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
 class WorkingDaySettingAdmin extends AbstractBaseAdmin
 {
