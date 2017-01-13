@@ -40,10 +40,10 @@ services:
         class: AppBundle\Admin\MenuLevel1Admin
         arguments: [ ~, AppBundle\Entity\MenuLevel1, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: "Categoria", group: "Page" }
+            - { name: sonata.admin, manager_type: orm, label: "Menú nivell 1", group: "Page" }
 
     admin.menuLevel2:
         class: AppBundle\Admin\MenuLevel2Admin
         arguments: [ ~, AppBundle\Entity\MenuLevel2, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: "Subcategoria", group: "Page" }
+            - { name: sonata.admin, manager_type: orm, label: "Menú nivell 2", group: "Page" }
