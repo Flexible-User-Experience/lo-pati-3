@@ -14,7 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
  *
  * @category Admin
  * @package  AppBundle\Admin
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
 class ArtistAdmin extends AbstractBaseAdmin
 {

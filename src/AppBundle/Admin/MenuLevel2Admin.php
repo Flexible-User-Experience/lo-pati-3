@@ -14,12 +14,12 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
  *
  * @category Admin
  * @package  AppBundle\Admin
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
 class MenuLevel2Admin extends AbstractBaseAdmin
 {
-    protected $classnameLabel = 'Subcategoria';
-    protected $baseRoutePattern = 'pages/menuLevel2';
+    protected $classnameLabel = 'Menú nivell 2';
+    protected $baseRoutePattern = 'pages/menu-level-2';
     protected $datagridValues = array(
         '_sort_by'    => 'position',
         '_sort_order' => 'asc',
@@ -33,18 +33,20 @@ class MenuLevel2Admin extends AbstractBaseAdmin
         $formMapper
             ->with('General', $this->getFormMdSuccessBoxArray(6))
             ->add(
-                'position',
-                null,
-                array(
-                    'label'    => 'Dies Posició',
-                    'required' => true,
-                )
-            )
-            ->add(
                 'name',
                 null,
                 array(
                     'label'    => 'Nom',
+                    'required' => true,
+                )
+            )
+            ->end()
+            ->with('Controls', $this->getFormMdSuccessBoxArray(6))
+            ->add(
+                'position',
+                null,
+                array(
+                    'label'    => 'Dies Posició',
                     'required' => true,
                 )
             )

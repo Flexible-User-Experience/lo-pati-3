@@ -5,21 +5,18 @@ namespace AppBundle\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\AdminBundle\Route\RouteCollection;
-use Sonata\CoreBundle\Form\Type\DatePickerType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
  * Class MenuLevel1Admin
  *
  * @category Admin
  * @package  AppBundle\Admin
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
 class MenuLevel1Admin extends AbstractBaseAdmin
 {
-    protected $classnameLabel = 'Categoria';
-    protected $baseRoutePattern = 'pages/menuLevel1';
+    protected $classnameLabel = 'Menú nivell 1';
+    protected $baseRoutePattern = 'pages/menu-level-1';
     protected $datagridValues = array(
         '_sort_by'    => 'position',
         '_sort_order' => 'asc',
@@ -33,6 +30,16 @@ class MenuLevel1Admin extends AbstractBaseAdmin
         $formMapper
             ->with('General', $this->getFormMdSuccessBoxArray(6))
             ->add(
+                'name',
+                null,
+                array(
+                    'label'    => 'Nom',
+                    'required' => true,
+                )
+            )
+            ->end()
+            ->with('Controls', $this->getFormMdSuccessBoxArray(6))
+            ->add(
                 'position',
                 null,
                 array(
@@ -41,18 +48,18 @@ class MenuLevel1Admin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'name',
-                null,
-                array(
-                    'label'    => 'Nom',
-                    'required' => true,
-                )
-            )
-            ->add(
                 'isArchive',
                 null,
                 array(
                     'label'    => 'Arxiu',
+                    'required' => false,
+                )
+            )
+            ->add(
+                'enabled',
+                'checkbox',
+                array(
+                    'label'    => 'Actiu',
                     'required' => false,
                 )
             )
@@ -87,6 +94,13 @@ class MenuLevel1Admin extends AbstractBaseAdmin
                     'label' => 'Arxiu',
                 )
             )
+            ->add(
+                'enabled',
+                null,
+                array(
+                    'label' => 'Actiu',
+                )
+            )
         ;
     }
 
@@ -118,6 +132,14 @@ class MenuLevel1Admin extends AbstractBaseAdmin
                 null,
                 array(
                     'label'    => 'Arxiu',
+                    'editable' => true,
+                )
+            )
+            ->add(
+                'enabled',
+                null,
+                array(
+                    'label'    => 'Actiu',
                     'editable' => true,
                 )
             )

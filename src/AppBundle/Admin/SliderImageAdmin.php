@@ -11,7 +11,7 @@ use Sonata\AdminBundle\Form\FormMapper;
  *
  * @category Admin
  * @package  AppBundle\Admin
- * @author   Wilson Iglesias <wiglesias83@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
 class SliderImageAdmin extends AbstractBaseAdmin
 {
