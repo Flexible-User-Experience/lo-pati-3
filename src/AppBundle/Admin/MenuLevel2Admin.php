@@ -40,13 +40,21 @@ class MenuLevel2Admin extends AbstractBaseAdmin
                     'required' => true,
                 )
             )
+            ->add(
+                'menuLevel1',
+                null,
+                array(
+                    'label'    => 'Menu nivell 1',
+                    'required' => false,
+                )
+            )
             ->end()
             ->with('Controls', $this->getFormMdSuccessBoxArray(6))
             ->add(
                 'position',
                 null,
                 array(
-                    'label'    => 'Dies Posició',
+                    'label'    => 'Posició',
                     'required' => true,
                 )
             )
@@ -80,6 +88,13 @@ class MenuLevel2Admin extends AbstractBaseAdmin
                 null,
                 array(
                     'label' => 'Posició',
+                )
+            )
+            ->add(
+                'menuLevel1',
+                null,
+                array(
+                    'label' => 'Menú nivell 1',
                 )
             )
             ->add(
@@ -118,6 +133,13 @@ class MenuLevel2Admin extends AbstractBaseAdmin
                 array(
                     'label'    => 'Posició',
                     'editable' => true,
+                )
+            )
+            ->add(
+                'menuLevel1',
+                null,
+                array(
+                    'label'    => 'Menú nivell 1',
                 )
             )
             ->add(
