@@ -47,3 +47,9 @@ services:
         arguments: [ ~, AppBundle\Entity\MenuLevel2, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Menú nivell 2", group: "Page" }
+
+    admin.newsletterUsers:
+        class: AppBundle\Admin\NewsletterUsersAdmin
+        arguments: [ ~, AppBundle\Entity\NewsletterUsers, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Butlletí d'usuaris", group: "Page" }
