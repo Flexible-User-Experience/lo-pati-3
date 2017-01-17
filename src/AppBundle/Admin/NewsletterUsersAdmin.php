@@ -3,6 +3,7 @@
 namespace AppBundle\Admin;
 
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 
 
@@ -15,7 +16,7 @@ use Sonata\AdminBundle\Route\RouteCollection;
  */
 class NewsletterUsersAdmin extends AbstractBaseAdmin
 {
-    protected $classnameLabel = 'Newsletter Users';
+    protected $classnameLabel = 'Butlletí usuaris';
     protected $baseRoutePattern = 'pages/newsletter-users';
     protected $datagridValues = array(
         '_sort_by'    => 'url',
@@ -32,6 +33,42 @@ class NewsletterUsersAdmin extends AbstractBaseAdmin
         $collection
             ->remove('show')
             ->remove('batch');
+    }
+
+    /**
+     * @param DatagridMapper $datagridMapper
+     */
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add(
+                'email',
+                null,
+                array(
+                    'label' => 'Email',
+                )
+            )
+            ->add(
+                'language',
+                null,
+                array(
+                    'label' => 'Idioma'
+                )
+            )
+            ->add(
+                'fail',
+                null,
+                array(
+                    'label' => 'Error'
+                )
+            )
+            ->add(
+                'enabled',
+                null,
+                array(
+                   'label' => 'Actiu'
+                )
+            );
     }
 
     /**
