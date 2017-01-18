@@ -2,6 +2,7 @@
 
 namespace AppBundle\Admin;
 
+use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
@@ -36,11 +37,59 @@ class NewsletterUsersAdmin extends AbstractBaseAdmin
     }
 
     /**
+     * @param FormMapper $formMapper
+     */
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->with('General', $this->getFormMdSuccessBoxArray(6))
+            ->add(
+                'email',
+                null,
+                array(
+                    'label' => 'Email'
+                )
+            )
+            ->add(
+                'language',
+                'choice',
+                array(
+                    'label' => 'Idioma',
+                    'choices' => array(
+                        'ca' => 'català',
+                        'es' => 'español',
+                        'en' => 'english',
+                    ),
+                    'required' => true,
+                )
+            )
+            ->end()
+            ->with('Controls', $this->getFormMdSuccessBoxArray(6))
+            ->add(
+                'enabled',
+                'checkbox',
+                array(
+                    'label'    => 'Actiu',
+                    'required' => false,
+                )
+            )
+            ->end();
+    }
+
+    /**
      * @param DatagridMapper $datagridMapper
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
+            ->add(
+                'createdAt',
+                'doctrine_orm_date',
+                array(
+                    'label'      => 'Data de creació',
+                    'field_type' => 'sonata_type_date_picker',
+                )
+            )
             ->add(
                 'email',
                 null,
@@ -50,16 +99,22 @@ class NewsletterUsersAdmin extends AbstractBaseAdmin
             )
             ->add(
                 'language',
-                null,
+                'doctrine_orm_string',
+                array('label' => 'Idioma'),
+                'choice',
                 array(
-                    'label' => 'Idioma'
+                    'choices' => array(
+                        'ca' => 'català',
+                        'es' => 'español',
+                        'en' => 'english',
+                    ),
                 )
             )
             ->add(
                 'fail',
                 null,
                 array(
-                    'label' => 'Error'
+                    'label' => 'Errors'
                 )
             )
             ->add(
@@ -79,6 +134,15 @@ class NewsletterUsersAdmin extends AbstractBaseAdmin
        unset($this->listModes['mosaic']);
         $listMapper
             ->add(
+                'createdAt',
+                'date',
+                array(
+                    'label' => 'Data de creació',
+                    'format' => 'd/m/Y',
+                    'editable' => false,
+                )
+            )
+            ->add(
                 'email',
                 null,
                 array(
@@ -95,18 +159,10 @@ class NewsletterUsersAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'token',
-                null,
-                array(
-                    'label' => 'Token',
-                    'editable' => false,
-                )
-            )
-            ->add(
                 'fail',
                 null,
                 array(
-                    'label' => 'Error',
+                    'label' => 'Errors',
                     'editable' => false,
                 )
             )
