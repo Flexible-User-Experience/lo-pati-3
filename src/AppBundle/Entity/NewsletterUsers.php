@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -45,12 +46,28 @@ class NewsletterUsers extends AbstractBase
     private $fail;
 
     /**
+     * @var ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\NewsletterGroup", inversedBy="users")
+     * @ORM\JoinTable()
+     */
+    private $groups;
+
+    /**
      *
      *
      * Methods
      *
      *
      */
+
+    /**
+     * NewsletterUsers constructor
+     */
+    public function __construct()
+    {
+        $this->groups = new ArrayCollection();
+    }
 
     /**
      * @return string
@@ -131,4 +148,25 @@ class NewsletterUsers extends AbstractBase
 
         return $this;
     }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getGroups()
+    {
+        return $this->groups;
+    }
+
+    /**
+     * @param ArrayCollection $groups
+     *
+     * @return $this
+     */
+    public function setGroups($groups)
+    {
+        $this->groups = $groups;
+
+        return $this;
+    }
+
 }

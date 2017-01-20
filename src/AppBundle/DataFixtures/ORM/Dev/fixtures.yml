@@ -100,6 +100,22 @@ AppBundle\Entity\NewsletterUsers:
         enabled: <boolean(70)>
         fail: <randomDigitNotNull()>
 
+# NewsletterGroup
+AppBundle\Entity\NewsletterGroup:
+    newsletterGroup1:
+        name: <name()>
+        enabled: <boolean(70)>
+        users:
+            - @newsletterUsers1
+            - @newsletterUsers2
+            - @newsletterUsers3
+            - @newsletterUsers5
+    newsletterGroup2:
+        name: <name()>
+        enabled: <boolean(70)>
+        users:
+            - @newsletterUsers2
+
 ## Users
 AppBundle\Entity\User:
     admin:
