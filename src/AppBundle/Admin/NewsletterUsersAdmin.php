@@ -18,7 +18,7 @@ use Sonata\AdminBundle\Route\RouteCollection;
 class NewsletterUsersAdmin extends AbstractBaseAdmin
 {
     protected $classnameLabel = 'Butlletí usuaris';
-    protected $baseRoutePattern = 'pages/newsletter-users';
+    protected $baseRoutePattern = 'pages/newsletter-user';
     protected $datagridValues = array(
         '_sort_by'    => 'url',
         '_sort_order' => 'asc',
