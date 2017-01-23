@@ -4,16 +4,13 @@ namespace AppBundle\Entity;
 
 use AppBundle\Entity\Traits\NameTrait;
 use AppBundle\Entity\Traits\PositionTrait;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * MenuLevel2
+ * MenuLevel2.
  *
  * @category Entity
- * @package  AppBundle\Entity
+ *
  * @author   Wils Iglesias <wiglesias83@gmail.com>
  *
  * @ORM\Table()
@@ -25,7 +22,7 @@ class MenuLevel2 extends AbstractBase
     use PositionTrait;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(type="boolean", options={"default"=0})
      */
@@ -33,7 +30,7 @@ class MenuLevel2 extends AbstractBase
 
     /**
      * @var MenuLevel1
-     * 
+     *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\MenuLevel1", inversedBy="menuLevel2items")
      */
     private $menuLevel1;
@@ -44,17 +41,13 @@ class MenuLevel2 extends AbstractBase
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\Page", mappedBy="menuLevel2")
      */
     private $page;
-    
+
     /**
-     *
-     *
-     * Methods
-     *
-     *
+     * Methods.
      */
-    
+
     /**
-     * @return boolean
+     * @return bool
      */
     public function getIsList()
     {
@@ -62,14 +55,14 @@ class MenuLevel2 extends AbstractBase
     }
 
     /**
-     * @param boolean $isList
-     * 
+     * @param bool $isList
+     *
      * @return MenuLevel1
      */
     public function setIsList($isList)
     {
         $this->isList = $isList;
-        
+
         return $this;
     }
 
@@ -83,13 +76,13 @@ class MenuLevel2 extends AbstractBase
 
     /**
      * @param MenuLevel1 $menuLevel1
-     * 
+     *
      * @return MenuLevel2
      */
     public function setMenuLevel1($menuLevel1)
     {
         $this->menuLevel1 = $menuLevel1;
-        
+
         return $this;
     }
 
@@ -103,11 +96,13 @@ class MenuLevel2 extends AbstractBase
 
     /**
      * @param Page $page
+     *
      * @return MenuLevel2
      */
     public function setPage($page)
     {
         $this->page = $page;
+
         return $this;
     }
 }

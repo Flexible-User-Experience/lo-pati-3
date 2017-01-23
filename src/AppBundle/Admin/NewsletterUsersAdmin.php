@@ -7,25 +7,24 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 
-
 /**
- * Class NewsletterUsersAdmin
+ * Class NewsletterUsersAdmin.
  *
  * @category Admin
- * @package  AppBundle\Admin
+ *
  * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
 class NewsletterUsersAdmin extends AbstractBaseAdmin
 {
-    protected $classnameLabel = 'Butlletí usuaris';
+    protected $classnameLabel = 'Butlletí Usuaris';
     protected $baseRoutePattern = 'pages/newsletter-user';
     protected $datagridValues = array(
-        '_sort_by'    => 'url',
+        '_sort_by' => 'url',
         '_sort_order' => 'asc',
     );
 
     /**
-     * Configure route collection
+     * Configure route collection.
      *
      * @param RouteCollection $collection
      */
@@ -47,7 +46,7 @@ class NewsletterUsersAdmin extends AbstractBaseAdmin
                 'email',
                 null,
                 array(
-                    'label' => 'Email'
+                    'label' => 'Email',
                 )
             )
             ->add(
@@ -69,7 +68,7 @@ class NewsletterUsersAdmin extends AbstractBaseAdmin
                 'enabled',
                 'checkbox',
                 array(
-                    'label'    => 'Actiu',
+                    'label' => 'Actiu',
                     'required' => false,
                 )
             )
@@ -86,7 +85,7 @@ class NewsletterUsersAdmin extends AbstractBaseAdmin
                 'createdAt',
                 'doctrine_orm_date',
                 array(
-                    'label'      => 'Data de creació',
+                    'label' => 'Data de creació',
                     'field_type' => 'sonata_type_date_picker',
                 )
             )
@@ -114,14 +113,14 @@ class NewsletterUsersAdmin extends AbstractBaseAdmin
                 'fail',
                 null,
                 array(
-                    'label' => 'Errors'
+                    'label' => 'Errors',
                 )
             )
             ->add(
                 'enabled',
                 null,
                 array(
-                   'label' => 'Actiu'
+                   'label' => 'Actiu',
                 )
             );
     }
@@ -131,7 +130,7 @@ class NewsletterUsersAdmin extends AbstractBaseAdmin
      */
     protected function configureListFields(ListMapper $listMapper)
     {
-       unset($this->listModes['mosaic']);
+        unset($this->listModes['mosaic']);
         $listMapper
             ->add(
                 'createdAt',
@@ -170,7 +169,7 @@ class NewsletterUsersAdmin extends AbstractBaseAdmin
                 'enabled',
                 null,
                 array(
-                    'label'    => 'Actiu',
+                    'label' => 'Actiu',
                     'editable' => true,
                 )
             )
@@ -178,10 +177,10 @@ class NewsletterUsersAdmin extends AbstractBaseAdmin
                 '_action',
                 'actions',
                 array(
-                    'label'   => 'Accions',
+                    'label' => 'Accions',
                     'actions' => array(
-                        'edit'   => array('template' => '::Admin/Buttons/list__action_edit_button.html.twig'),
-                    )
+                        'edit' => array('template' => '::Admin/Buttons/list__action_edit_button.html.twig'),
+                    ),
                 )
             );
     }

@@ -12,7 +12,7 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Configuració", group: "Setting" }
 
-    admin.sliderImage:
+    admin.slider_image:
         class: AppBundle\Admin\SliderImageAdmin
         arguments: [ ~, AppBundle\Entity\SliderImage, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
@@ -24,7 +24,7 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Arxiu", group: "Page" }
 
-    admin.workingDaySetting:
+    admin.working_day_setting:
         class: AppBundle\Admin\WorkingDaySettingAdmin
         arguments: [ ~, AppBundle\Entity\WorkingDaySetting, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
@@ -36,26 +36,26 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Artista", group: "Page" }
 
-    admin.menuLevel1:
+    admin.menu_level1:
         class: AppBundle\Admin\MenuLevel1Admin
         arguments: [ ~, AppBundle\Entity\MenuLevel1, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Menú nivell 1", group: "Page" }
 
-    admin.menuLevel2:
+    admin.menu_level2:
         class: AppBundle\Admin\MenuLevel2Admin
         arguments: [ ~, AppBundle\Entity\MenuLevel2, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Menú nivell 2", group: "Page" }
 
-    admin.newsletterUsers:
+    admin.newsletter_users:
         class: AppBundle\Admin\NewsletterUsersAdmin
         arguments: [ ~, AppBundle\Entity\NewsletterUsers, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
-
             - { name: sonata.admin, manager_type: orm, label: "Butlletí d'usuaris", group: "Page" }
-    admin.newsletterGroup:
+
+    admin.newsletter_group:
         class: AppBundle\Admin\NewsletterGroupAdmin
         arguments: [ ~, AppBundle\Entity\NewsletterGroup, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: "Butlletins dels usuaris", group: "Page" }
+            - { name: sonata.admin, manager_type: orm, label: "Butlletins Grup", group: "Page" }
