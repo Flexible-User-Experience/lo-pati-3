@@ -204,10 +204,10 @@ class NewslettersAdmin extends AbstractBaseAdmin
         unset($this->listModes['mosaic']);
         $listMapper
             ->add(
-                'name',
+                'number',
                 null,
                 array(
-                    'label' => 'Nom',
+                    'label' => 'Número',
                     'editable' => true,
                 )
             )
@@ -220,18 +220,18 @@ class NewslettersAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'status',
+                'name',
                 null,
                 array(
-                    'label' => 'Estat',
+                    'label' => 'Nom',
                     'editable' => true,
                 )
             )
             ->add(
-                'emailSubscribed',
+                'status',
                 null,
                 array(
-                    'label' => 'Emails Subscrits',
+                    'label' => 'Estat',
                     'editable' => true,
                 )
             )
@@ -248,14 +248,6 @@ class NewslettersAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label' => 'Test',
-                    'editable' => true,
-                )
-            )
-            ->add(
-                'number',
-                null,
-                array(
-                    'label' => 'Número',
                     'editable' => true,
                 )
             )
