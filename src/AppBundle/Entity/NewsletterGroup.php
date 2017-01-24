@@ -7,10 +7,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Class NewsletterGroup
+ * Class NewsletterGroup.
  *
  * @category Entity
- * @package AppBundle\Entity
+ *
  * @author   Wils Iglesias <wiglesias83@gmail.com>
  *
  * @ORM\table()
@@ -28,15 +28,11 @@ class NewsletterGroup extends AbstractBase
     private $users;
 
     /**
-     *
-     *
-     * Methods
-     *
-     *
+     * Methods.
      */
 
     /**
-     * NewsletterGroup constructor
+     * NewsletterGroup constructor.
      */
     public function __construct()
     {
@@ -59,6 +55,36 @@ class NewsletterGroup extends AbstractBase
     public function setUsers($users)
     {
         $this->users = $users;
+
+        return $this;
+    }
+
+    /**
+     * Add NewsletterUsers.
+     *
+     * @param NewsletterUsers $user
+     *
+     * @return $this
+     */
+    public function addUser(NewsletterUsers $user)
+    {
+        $user->addGroup($this);
+//        $this->users[] = $user;
+        $this->users->add($user);
+
+        return $this;
+    }
+
+    /**
+     * Remove NewsletterUsers.
+     *
+     * @param NewsletterUsers $user
+     *
+     * @return $this
+     */
+    public function removeUser(NewsletterUsers $user)
+    {
+        $this->users->removeElement($user);
 
         return $this;
     }

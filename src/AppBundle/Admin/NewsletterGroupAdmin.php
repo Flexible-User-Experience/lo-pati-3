@@ -52,6 +52,14 @@ class NewsletterGroupAdmin extends AbstractBaseAdmin
             ->end()
             ->with('Controls', $this->getFormMdSuccessBoxArray(6))
             ->add(
+                'users',
+                null,
+                array(
+                    'label' => 'Usuaris',
+                    'required' => false,
+                )
+            )
+            ->add(
                 'enabled',
                 'checkbox',
                 array(

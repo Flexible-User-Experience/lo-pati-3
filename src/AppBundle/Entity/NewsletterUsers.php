@@ -6,19 +6,17 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Class NewsletterUsers
+ * Class NewsletterUsers.
  *
  * @category Entity
- * @package  AppBundle\Entity
+ *
  * @author   Wils Iglesias <wiglesias83@gmail.com>
  *
  * @ORM\table()
  * @ORM\Entity(repositoryClass="AppBundle\Repository\NewslettersRepository")
- *
  */
 class NewsletterUsers extends AbstractBase
 {
-
     /**
      * @var string
      *
@@ -49,20 +47,16 @@ class NewsletterUsers extends AbstractBase
      * @var ArrayCollection
      *
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\NewsletterGroup", inversedBy="users")
-     * @ORM\JoinTable()
+     * @ORM\JoinTable(name="newletter_users_groups")
      */
     private $groups;
 
     /**
-     *
-     *
-     * Methods
-     *
-     *
+     * Methods.
      */
 
     /**
-     * NewsletterUsers constructor
+     * NewsletterUsers constructor.
      */
     public function __construct()
     {
@@ -169,4 +163,39 @@ class NewsletterUsers extends AbstractBase
         return $this;
     }
 
+    /**
+     * Add NewsletterGroup.
+     *
+     * @param NewsletterGroup $group
+     *
+     * @return $this
+     */
+    public function addGroup(NewsletterGroup $group)
+    {
+        $this->groups->add($group);
+
+        return $this;
+    }
+
+    /**
+     * Remove NewsletterGroup.
+     *
+     * @param NewsletterGroup $group
+     *
+     * @return $this
+     */
+    public function removeGroup(NewsletterGroup $group)
+    {
+        $this->groups->removeElement($group);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getEmail();
+    }
 }

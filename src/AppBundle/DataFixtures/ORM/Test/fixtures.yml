@@ -91,6 +91,19 @@ AppBundle\Entity\MenuLevel2:
     isList: <boolean(10)>
     menuLevel1: @menuLevel1<numberBetween(1, 2)>
 
+# Newsletters
+AppBundle\Entity\Newsletters:
+    newsletters{1..2}:
+        name: <name()>
+        newsletterDate: <dateTimeThisMonth()>
+        startSend: <dateTimeThisMonth()>
+        finishSend: <dateTimeThisMonth()>
+        status: <numberBetween(0, 3)>
+        emailSubscribed: <numberBetween()>
+        emailSendeds: <numberBetween()>
+        test: <boolean(80)>
+        number: <numberBetween(1, 10)>
+
 # NewsletterUsers
 AppBundle\Entity\NewsletterUsers:
     newsletterUsers{1..2}:
