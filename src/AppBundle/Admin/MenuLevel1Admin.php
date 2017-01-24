@@ -43,7 +43,7 @@ class MenuLevel1Admin extends AbstractBaseAdmin
                 'position',
                 null,
                 array(
-                    'label'    => 'Dies Posició',
+                    'label'    => 'Posició',
                     'required' => true,
                 )
             )

@@ -4,15 +4,14 @@ namespace AppBundle\Entity;
 
 use AppBundle\Entity\Traits\NameTrait;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Newsletters
+ * Newsletters.
  *
  * @category Entity
- * @package  AppBundle\Entity
+ *
  * @author   Anton Serra <aserratorta@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Repository\NewslettersRepository")
@@ -50,39 +49,35 @@ class Newsletters extends AbstractBase
     private $status;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $subscript;
+    private $emailSubscribed;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $sent;
+    private $emailSendeds;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $test;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(type="integer", nullable=true)
      */
     private $number;
 
     /**
-     *
-     *
-     * Methods
-     *
-     *
+     * Methods.
      */
 
     /**
@@ -168,19 +163,19 @@ class Newsletters extends AbstractBase
     /**
      * @return int
      */
-    public function getSubscript()
+    public function getEmailSubscribed()
     {
-        return $this->subscript;
+        return $this->emailSubscribed;
     }
 
     /**
-     * @param int $subscript
+     * @param int $emailSubscribed
      *
      * @return Newsletters
      */
-    public function setSubscript($subscript)
+    public function setEmailSubscribed($emailSubscribed)
     {
-        $this->subscript = $subscript;
+        $this->emailSubscribed = $emailSubscribed;
 
         return $this;
     }
@@ -188,25 +183,25 @@ class Newsletters extends AbstractBase
     /**
      * @return int
      */
-    public function getSent()
+    public function getEmailSendeds()
     {
-        return $this->sent;
+        return $this->emailSendeds;
     }
 
     /**
-     * @param int $sent
+     * @param int $emailSendeds
      *
      * @return Newsletters
      */
-    public function setSent($sent)
+    public function setEmailSendeds($emailSendeds)
     {
-        $this->sent = $sent;
+        $this->emailSendeds = $emailSendeds;
 
         return $this;
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isTest()
     {
@@ -214,7 +209,7 @@ class Newsletters extends AbstractBase
     }
 
     /**
-     * @param boolean $test
+     * @param bool $test
      *
      * @return Newsletters
      */

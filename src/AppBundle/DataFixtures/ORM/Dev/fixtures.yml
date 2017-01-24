@@ -91,6 +91,44 @@ AppBundle\Entity\MenuLevel2:
     isList: <boolean(10)>
     menuLevel1: @menuLevel1<numberBetween(1, 5)>
 
+# Newsletters
+AppBundle\Entity\Newsletters:
+    newsletters{1..10}:
+        name: <name()>
+        newsletterDate: <dateTimeThisMonth()>
+        startSend: <dateTimeThisMonth()>
+        finishSend: <dateTimeThisMonth()>
+        status: <numberBetween(0, 3)>
+        emailSubscribed: <numberBetween()>
+        emailSendeds: <numberBetween()>
+        test: <boolean(80)>
+        number: <numberBetween(1, 10)>
+
+# NewsletterUsers
+AppBundle\Entity\NewsletterUsers:
+    newsletterUsers{1..5}:
+        email: <safeEmail()>
+        language: <randomElement(array('es', 'ca', 'en'))>
+        token: <sha1()>
+        enabled: <boolean(70)>
+        fail: <randomDigitNotNull()>
+
+# NewsletterGroup
+AppBundle\Entity\NewsletterGroup:
+    newsletterGroup1:
+        name: <name()>
+        enabled: <boolean(70)>
+        users:
+            - @newsletterUsers1
+            - @newsletterUsers2
+            - @newsletterUsers3
+            - @newsletterUsers5
+    newsletterGroup2:
+        name: <name()>
+        enabled: <boolean(70)>
+        users:
+            - @newsletterUsers2
+
 ## Users
 AppBundle\Entity\User:
     admin:

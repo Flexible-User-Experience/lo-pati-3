@@ -2,28 +2,38 @@
 
 namespace AppBundle\Admin;
 
+use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
-use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
-use Sonata\CoreBundle\Form\Type\DatePickerType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
- * Class MenuLevel2Admin
+ * Class NewsletterGroupAdmin.
  *
  * @category Admin
- * @package  AppBundle\Admin
+ *
  * @author   Wils Iglesias <wiglesias83@gmail.com>
  */
-class MenuLevel2Admin extends AbstractBaseAdmin
+class NewsletterGroupAdmin extends AbstractBaseAdmin
 {
-    protected $classnameLabel = 'Menú nivell 2';
-    protected $baseRoutePattern = 'pages/menu-level-2';
+    protected $classnameLabel = 'Butlletins dels grups';
+    protected $baseRoutePattern = 'pages/newsletter-group';
     protected $datagridValues = array(
-        '_sort_by'    => 'position',
+        '_sort_by' => 'url',
         '_sort_order' => 'asc',
     );
+
+    /**
+     * Configure route collection.
+     *
+     * @param RouteCollection $collection
+     */
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        $collection
+            ->remove('show')
+            ->remove('batch');
+    }
 
     /**
      * @param FormMapper $formMapper
@@ -36,45 +46,28 @@ class MenuLevel2Admin extends AbstractBaseAdmin
                 'name',
                 null,
                 array(
-                    'label'    => 'Nom',
-                    'required' => true,
-                )
-            )
-            ->add(
-                'menuLevel1',
-                null,
-                array(
-                    'label'    => 'Menu nivell 1',
-                    'required' => false,
+                    'label' => 'Nom',
                 )
             )
             ->end()
             ->with('Controls', $this->getFormMdSuccessBoxArray(6))
             ->add(
-                'position',
+                'users',
                 null,
                 array(
-                    'label'    => 'Posició',
-                    'required' => true,
+                    'label' => 'Usuaris',
+                    'required' => false,
                 )
             )
             ->add(
-                'isList',
-                null,
-                array(
-                    'label'    => 'Llista',
-                    'required' => false,
-                )
-            )->add(
                 'enabled',
-                null,
+                'checkbox',
                 array(
-                    'label'    => 'Actiu',
+                    'label' => 'Actiu',
                     'required' => false,
                 )
             )
-            ->end()
-        ;
+            ->end();
     }
 
     /**
@@ -84,17 +77,10 @@ class MenuLevel2Admin extends AbstractBaseAdmin
     {
         $datagridMapper
             ->add(
-                'position',
+                'users',
                 null,
                 array(
-                    'label' => 'Posició',
-                )
-            )
-            ->add(
-                'menuLevel1',
-                null,
-                array(
-                    'label' => 'Menú nivell 1',
+                    'label' => 'Usuaris',
                 )
             )
             ->add(
@@ -105,19 +91,12 @@ class MenuLevel2Admin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'isList',
-                null,
-                array(
-                    'label' => 'Llista',
-                )
-            )->add(
                 'enabled',
                 null,
                 array(
-                    'label' => 'Actiu',
+                   'label' => 'Actiu',
                 )
-            )
-        ;
+            );
     }
 
     /**
@@ -128,33 +107,18 @@ class MenuLevel2Admin extends AbstractBaseAdmin
         unset($this->listModes['mosaic']);
         $listMapper
             ->add(
-                'position',
+                'users',
                 null,
                 array(
-                    'label'    => 'Posició',
+                    'label' => 'Usuaris',
                     'editable' => true,
-                )
-            )
-            ->add(
-                'menuLevel1',
-                null,
-                array(
-                    'label'    => 'Menú nivell 1',
                 )
             )
             ->add(
                 'name',
                 null,
                 array(
-                    'label'    => 'Nom',
-                    'editable' => true,
-                )
-            )
-            ->add(
-                'isList',
-                null,
-                array(
-                    'label'    => 'Llista',
+                    'label' => 'Nom',
                     'editable' => true,
                 )
             )
@@ -162,7 +126,7 @@ class MenuLevel2Admin extends AbstractBaseAdmin
                 'enabled',
                 null,
                 array(
-                    'label'    => 'Actiu',
+                    'label' => 'Actiu',
                     'editable' => true,
                 )
             )
@@ -170,10 +134,10 @@ class MenuLevel2Admin extends AbstractBaseAdmin
                 '_action',
                 'actions',
                 array(
-                    'label'   => 'Accions',
+                    'label' => 'Accions',
                     'actions' => array(
-                        'edit'   => array('template' => '::Admin/Buttons/list__action_edit_button.html.twig'),
-                    )
+                        'edit' => array('template' => '::Admin/Buttons/list__action_edit_button.html.twig'),
+                    ),
                 )
             );
     }

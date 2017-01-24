@@ -19,6 +19,7 @@
         "doctrine/doctrine-bundle": "~1.4",
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "hautelook/alice-bundle": "^1.0",
+        "ocramius/proxy-manager": "1.0.2",
         "liip/functional-test-bundle": "^1.0",
         "symfony/swiftmailer-bundle": "~2.3",
         "symfony/monolog-bundle": "~2.4",

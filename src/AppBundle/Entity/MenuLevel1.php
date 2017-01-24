@@ -144,4 +144,9 @@ class MenuLevel1 extends AbstractBase
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
