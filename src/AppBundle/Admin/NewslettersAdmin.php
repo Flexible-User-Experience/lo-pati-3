@@ -7,7 +7,6 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\CoreBundle\Form\Type\DatePickerType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
  * Class NewslettersAdmin.
@@ -51,55 +50,6 @@ class NewslettersAdmin extends AbstractBaseAdmin
                     'required' => false,
                 )
             )
-//            ->add(
-//                'type',
-//                null,
-//                array(
-//                    'label'    => 'Tipus',
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'place',
-//                null,
-//                array(
-//                    'label'    => 'Lloc',
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'summary',
-//                TextareaType::class,
-//                array(
-//                    'label'    => 'Resum',
-//                    'required' => false,
-//                    'attr'     => array(
-//                        'rows' => 6,
-//                    )
-//                )
-//            )
-//            ->add(
-//                'description',
-//                TextareaType::class,
-//                array(
-//                    'label'    => 'Descripció',
-//                    'required' => false,
-//                    'attr'     => array(
-//                        'rows' => 6,
-//                    )
-//                )
-//            )
-//            ->add(
-//                'links',
-//                TextareaType::class,
-//                array(
-//                    'label'    => 'Links',
-//                    'required' => false,
-//                    'attr'     => array(
-//                        'rows' => 6,
-//                    )
-//                )
-//            )
             ->add(
                 'newsletterDate',
                 DatePickerType::class,
@@ -136,15 +86,6 @@ class NewslettersAdmin extends AbstractBaseAdmin
             )
             ->end()
             ->with('Controls', $this->getFormMdSuccessBoxArray(5))
-//            ->add(
-//                'expirationDate',
-//                DatePickerType::class,
-//                array(
-//                    'label'  => 'Data Caducitat',
-//                    'format' => 'd/M/y',
-//                    'required' => false,
-//                )
-//            )
             ->add(
                 'status',
                 null,
@@ -158,7 +99,7 @@ class NewslettersAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label' => 'Emails Subscrits',
-                    'required' => false,
+                    'disabled' => true,
                 )
             )
             ->add(
@@ -166,7 +107,7 @@ class NewslettersAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label' => 'Emails Enviats',
-                    'required' => false,
+                    'disabled' => true,
                 )
             )
             ->add(
@@ -177,70 +118,6 @@ class NewslettersAdmin extends AbstractBaseAdmin
                     'required' => false,
                 )
             )
-//            ->add(
-//                'smallImageName1',
-//                null,
-//                array(
-//                    'label'    => 'Nom Imatge Petita 1',
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'largeImageName',
-//                null,
-//                array(
-//                    'label'    => 'Nom Imatge Gran',
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'largeFooterImage',
-//                null,
-//                array(
-//                    'label'    => 'Imatge Peu Gran',
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'documentName1',
-//                null,
-//                array(
-//                    'label'    => 'Nom Document 1',
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'documentTitle1',
-//                null,
-//                array(
-//                    'label'    => 'Títol Document 1',
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'documentName2',
-//                null,
-//                array(
-//                    'label'    => 'Nom Document 2',
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'documentTitle2',
-//                null,
-//                array(
-//                    'label'    => 'Títol Document 2',
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'smallImageName2',
-//                null,
-//                array(
-//                    'label'    => 'Nom Imatge Petita 2',
-//                    'required' => false,
-//                )
-//            )
             ->end()
         ;
     }
@@ -363,7 +240,7 @@ class NewslettersAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label' => 'Emails Enviats',
-                    'editable' => true,
+                    'editable' => false,
                 )
             )
             ->add(

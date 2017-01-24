@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @category Entity
  *
  * @author   Anton Serra <aserratorta@gmail.com>
+ * @author   Wils Iglesias <wiglesias83@gmail.com>
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Repository\NewslettersRepository")

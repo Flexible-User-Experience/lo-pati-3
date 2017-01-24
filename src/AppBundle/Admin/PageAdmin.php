@@ -10,10 +10,10 @@ use Sonata\CoreBundle\Form\Type\DatePickerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
- * Class PageAdmin
+ * Class PageAdmin.
  *
  * @category Admin
- * @package  AppBundle\Admin
+ *
  * @author   Anton Serra <aserratorta@gmail.com>
  */
 class PageAdmin extends AbstractBaseAdmin
@@ -21,12 +21,12 @@ class PageAdmin extends AbstractBaseAdmin
     protected $classnameLabel = 'Page';
     protected $baseRoutePattern = 'pages/page';
     protected $datagridValues = array(
-        '_sort_by'    => 'publishDate',
+        '_sort_by' => 'publishDate',
         '_sort_order' => 'desc',
     );
 
     /**
-     * Configure route collection
+     * Configure route collection.
      *
      * @param RouteCollection $collection
      */
@@ -47,7 +47,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'name',
                 null,
                 array(
-                    'label'    => 'Nom',
+                    'label' => 'Nom',
                     'required' => false,
                 )
             )
@@ -55,7 +55,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'type',
                 null,
                 array(
-                    'label'    => 'Tipus',
+                    'label' => 'Tipus',
                     'required' => false,
                 )
             )
@@ -63,7 +63,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'place',
                 null,
                 array(
-                    'label'    => 'Lloc',
+                    'label' => 'Lloc',
                     'required' => false,
                 )
             )
@@ -71,33 +71,33 @@ class PageAdmin extends AbstractBaseAdmin
                 'summary',
                 TextareaType::class,
                 array(
-                    'label'    => 'Resum',
+                    'label' => 'Resum',
                     'required' => false,
-                    'attr'     => array(
+                    'attr' => array(
                         'rows' => 6,
-                    )
+                    ),
                 )
             )
             ->add(
                 'description',
                 TextareaType::class,
                 array(
-                    'label'    => 'Descripció',
+                    'label' => 'Descripció',
                     'required' => false,
-                    'attr'     => array(
+                    'attr' => array(
                         'rows' => 6,
-                    )
+                    ),
                 )
             )
             ->add(
                 'links',
                 TextareaType::class,
                 array(
-                    'label'    => 'Links',
+                    'label' => 'Links',
                     'required' => false,
-                    'attr'     => array(
+                    'attr' => array(
                         'rows' => 6,
-                    )
+                    ),
                 )
             )
             ->end()
@@ -106,7 +106,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'publishDate',
                 DatePickerType::class,
                 array(
-                    'label'  => 'Data Publicació',
+                    'label' => 'Data Publicació',
                     'format' => 'd/M/y',
                 )
             )
@@ -114,7 +114,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'expirationDate',
                 DatePickerType::class,
                 array(
-                    'label'  => 'Data Caducitat',
+                    'label' => 'Data Caducitat',
                     'format' => 'd/M/y',
                     'required' => false,
                 )
@@ -123,7 +123,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'realizationDate',
                 null,
                 array(
-                    'label'    => 'Data Realització',
+                    'label' => 'Data Realització',
                     'required' => false,
                 )
             )
@@ -131,7 +131,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'video',
                 null,
                 array(
-                    'label'    => 'Video',
+                    'label' => 'Video',
                     'required' => false,
                 )
             )
@@ -150,18 +150,18 @@ class PageAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
-                'smallImageName1',
+                'image1Name',
                 null,
                 array(
-                    'label'    => 'Nom Imatge Petita 1',
+                    'label' => 'Nom Imatge Petita 1',
                     'required' => false,
                 )
             )
             ->add(
-                'largeImageName',
+                'image2Name',
                 null,
                 array(
-                    'label'    => 'Nom Imatge Gran',
+                    'label' => 'Nom Imatge Gran',
                     'required' => false,
                 )
             )
@@ -169,55 +169,55 @@ class PageAdmin extends AbstractBaseAdmin
                 'largeFooterImage',
                 null,
                 array(
-                    'label'    => 'Imatge Peu Gran',
+                    'label' => 'Imatge Peu Gran',
                     'required' => false,
                 )
             )
             ->add(
-                'documentName1',
+                'document1Name',
                 null,
                 array(
-                    'label'    => 'Nom Document 1',
+                    'label' => 'Nom Document 1',
                     'required' => false,
                 )
             )
-            ->add(
-                'documentTitle1',
-                null,
-                array(
-                    'label'    => 'Títol Document 1',
-                    'required' => false,
-                )
-            )
-            ->add(
-                'documentName2',
-                null,
-                array(
-                    'label'    => 'Nom Document 2',
-                    'required' => false,
-                )
-            )
-            ->add(
-                'documentTitle2',
-                null,
-                array(
-                    'label'    => 'Títol Document 2',
-                    'required' => false,
-                )
-            )
-            ->add(
-                'smallImageName2',
-                null,
-                array(
-                    'label'    => 'Nom Imatge Petita 2',
-                    'required' => false,
-                )
-            )
+//            ->add(
+//                'documentTitle1',
+//                null,
+//                array(
+//                    'label'    => 'Títol Document 1',
+//                    'required' => false,
+//                )
+//            )
+//            ->add(
+//                'documentName2',
+//                null,
+//                array(
+//                    'label'    => 'Nom Document 2',
+//                    'required' => false,
+//                )
+//            )
+//            ->add(
+//                'documentTitle2',
+//                null,
+//                array(
+//                    'label'    => 'Títol Document 2',
+//                    'required' => false,
+//                )
+//            )
+//            ->add(
+//                'smallImageName2',
+//                null,
+//                array(
+//                    'label'    => 'Nom Imatge Petita 2',
+//                    'required' => false,
+//                )
+//            )
             ->add(
                 'startDate',
                 DatePickerType::class,
                 array(
-                    'label'  => 'Data Inicial',
+                    'label' => 'Data Inicial',
                     'format' => 'd/M/y',
                     'required' => false,
                 )
@@ -226,13 +226,13 @@ class PageAdmin extends AbstractBaseAdmin
                 'endDate',
                 DatePickerType::class,
                 array(
-                    'label'  => 'Data Final',
+                    'label' => 'Data Final',
                     'format' => 'd/M/y',
                     'required' => false,
                 )
             )
             ->end();
-        }
+    }
 
     /**
      * @param DatagridMapper $datagridMapper
@@ -265,60 +265,60 @@ class PageAdmin extends AbstractBaseAdmin
                 'type',
                 null,
                 array(
-                    'label'    => 'Tipus',
+                    'label' => 'Tipus',
                 )
             )
             ->add(
                 'publishDate',
                 'doctrine_orm_date',
                 array(
-                    'label'      => 'Data Publicació',
-                    'field_type' =>  DatePickerType::class,
+                    'label' => 'Data Publicació',
+                    'field_type' => DatePickerType::class,
                 )
             )
             ->add(
                 'expirationDate',
                 'doctrine_orm_date',
                 array(
-                    'label'      => 'Data Caducitat',
-                    'field_type' =>  DatePickerType::class,
+                    'label' => 'Data Caducitat',
+                    'field_type' => DatePickerType::class,
                 )
             )
             ->add(
                 'realizationDate',
                 null,
                 array(
-                    'label'    => 'Data Realització',
+                    'label' => 'Data Realització',
                 )
             )
             ->add(
                 'place',
                 null,
                 array(
-                    'label'    => 'Lloc',
+                    'label' => 'Lloc',
                 )
             )
             ->add(
                 'video',
                 null,
                 array(
-                    'label'    => 'Video',
+                    'label' => 'Video',
                 )
             )
             ->add(
                 'startDate',
                 'doctrine_orm_date',
                 array(
-                    'label'      => 'Data Inicial',
-                    'field_type' =>  DatePickerType::class,
+                    'label' => 'Data Inicial',
+                    'field_type' => DatePickerType::class,
                 )
             )
             ->add(
                 'endDate',
                 'doctrine_orm_date',
                 array(
-                    'label'      => 'Data Final',
-                    'field_type' =>  DatePickerType::class,
+                    'label' => 'Data Final',
+                    'field_type' => DatePickerType::class,
                 )
             )
         ;
@@ -335,7 +335,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'name',
                 null,
                 array(
-                    'label'    => 'Nom',
+                    'label' => 'Nom',
                     'editable' => true,
                 )
             )
@@ -343,7 +343,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'type',
                 null,
                 array(
-                    'label'    => 'Tipus',
+                    'label' => 'Tipus',
                     'editable' => true,
                 )
             )
@@ -351,7 +351,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'publishDate',
                 null,
                 array(
-                    'label'  => 'Data Publicació',
+                    'label' => 'Data Publicació',
                     'format' => 'd/m/Y',
                 )
             )
@@ -359,7 +359,7 @@ class PageAdmin extends AbstractBaseAdmin
                 'place',
                 null,
                 array(
-                    'label'    => 'Lloc',
+                    'label' => 'Lloc',
                     'editable' => true,
                 )
             )
@@ -367,12 +367,12 @@ class PageAdmin extends AbstractBaseAdmin
                 '_action',
                 'actions',
                 array(
-                    'label'   => 'Accions',
+                    'label' => 'Accions',
                     'actions' => array(
-                        'edit'   => array('template' => '::Admin/Buttons/list__action_edit_button.html.twig'),
-                        'show'   => array('template' => '::Admin/Buttons/list__action_show_button.html.twig'),
+                        'edit' => array('template' => '::Admin/Buttons/list__action_edit_button.html.twig'),
+                        'show' => array('template' => '::Admin/Buttons/list__action_show_button.html.twig'),
                         'delete' => array('template' => '::Admin/Buttons/list__action_delete_button.html.twig'),
-                    )
+                    ),
                 )
             );
     }

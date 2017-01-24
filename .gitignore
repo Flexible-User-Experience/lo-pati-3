@@ -24,4 +24,5 @@
 /backups/
 /test.sh
 /dbreset.sh
+/.php_cs.cache
 !.travis.yml

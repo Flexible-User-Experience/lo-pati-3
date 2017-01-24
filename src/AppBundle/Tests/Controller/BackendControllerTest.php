@@ -48,10 +48,10 @@ class BackendControllerTest extends AbstractBaseTest
     {
         return array(
             array('/admin/dashboard'),
-//            array('/admin/pages/page/list'),
-//            array('/admin/pages/page/create'),
-//            array('/admin/pages/page/1/delete'),
-//            array('/admin/pages/page/1/edit'),
+            array('/admin/pages/page/list'),
+            array('/admin/pages/page/create'),
+            array('/admin/pages/page/1/delete'),
+            array('/admin/pages/page/1/edit'),
             array('/admin/pages/archive/list'),
             array('/admin/pages/archive/create'),
             array('/admin/pages/archive/1/delete'),
