@@ -36,21 +36,21 @@ class NewslettersAdmin extends AbstractBaseAdmin
             ->remove('batch');
     }
 
-//    /**
-//     * @param FormMapper $formMapper
-//     */
-//    protected function configureFormFields(FormMapper $formMapper)
-//    {
-//        $formMapper
-//            ->with('General', $this->getFormMdSuccessBoxArray(7))
-//            ->add(
-//                'name',
-//                null,
-//                array(
-//                    'label'    => 'Nom',
-//                    'required' => false,
-//                )
-//            )
+    /**
+     * @param FormMapper $formMapper
+     */
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->with('General', $this->getFormMdSuccessBoxArray(7))
+            ->add(
+                'name',
+                null,
+                array(
+                    'label' => 'Nom',
+                    'required' => false,
+                )
+            )
 //            ->add(
 //                'type',
 //                null,
@@ -100,16 +100,42 @@ class NewslettersAdmin extends AbstractBaseAdmin
 //                    )
 //                )
 //            )
-//            ->end()
-//            ->with('Controls', $this->getFormMdSuccessBoxArray(5))
-//            ->add(
-//                'publishDate',
-//                DatePickerType::class,
-//                array(
-//                    'label'  => 'Data Publicació',
-//                    'format' => 'd/M/y',
-//                )
-//            )
+            ->add(
+                'newsletterDate',
+                DatePickerType::class,
+                array(
+                    'label' => 'Data Butlletí',
+                    'format' => 'd/M/y',
+                )
+            )
+            ->add(
+                'startSend',
+                DatePickerType::class,
+                array(
+                    'label' => 'Data Inicial Envio',
+                    'format' => 'd/M/y',
+                    'required' => false,
+                )
+            )
+            ->add(
+                'finishSend',
+                DatePickerType::class,
+                array(
+                    'label' => 'Data Final Envio',
+                    'format' => 'd/M/y',
+                    'required' => false,
+                )
+            )
+            ->add(
+                'number',
+                null,
+                array(
+                    'label' => 'Número',
+                    'required' => false,
+                )
+            )
+            ->end()
+            ->with('Controls', $this->getFormMdSuccessBoxArray(5))
 //            ->add(
 //                'expirationDate',
 //                DatePickerType::class,
@@ -119,36 +145,38 @@ class NewslettersAdmin extends AbstractBaseAdmin
 //                    'required' => false,
 //                )
 //            )
-//            ->add(
-//                'realizationDate',
-//                null,
-//                array(
-//                    'label'    => 'Data Realització',
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'video',
-//                null,
-//                array(
-//                    'label'    => 'Video',
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'urlVimeo',
-//                null,
-//                array(
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'urlFlickr',
-//                null,
-//                array(
-//                    'required' => false,
-//                )
-//            )
+            ->add(
+                'status',
+                null,
+                array(
+                    'label' => 'Estat',
+                    'required' => false,
+                )
+            )
+            ->add(
+                'emailSubscribed',
+                null,
+                array(
+                    'label' => 'Emails Subscrits',
+                    'required' => false,
+                )
+            )
+            ->add(
+                'emailSendeds',
+                null,
+                array(
+                    'label' => 'Emails Enviats',
+                    'required' => false,
+                )
+            )
+            ->add(
+                'test',
+                null,
+                array(
+                    'label' => 'Test',
+                    'required' => false,
+                )
+            )
 //            ->add(
 //                'smallImageName1',
 //                null,
@@ -213,116 +241,83 @@ class NewslettersAdmin extends AbstractBaseAdmin
 //                    'required' => false,
 //                )
 //            )
-//            ->add(
-//                'startDate',
-//                DatePickerType::class,
-//                array(
-//                    'label'  => 'Data Inicial',
-//                    'format' => 'd/M/y',
-//                    'required' => false,
-//                )
-//            )
-//            ->add(
-//                'endDate',
-//                DatePickerType::class,
-//                array(
-//                    'label'  => 'Data Final',
-//                    'format' => 'd/M/y',
-//                    'required' => false,
-//                )
-//            )
-//            ->end();
-//        }
+            ->end()
+        ;
+    }
 
-//    /**
-//     * @param DatagridMapper $datagridMapper
-//     */
-//    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
-//    {
-//        $datagridMapper
-//            ->add(
-//                'name',
-//                null,
-//                array(
-//                    'label' => 'Name',
-//                )
-//            )
-//            ->add(
-//                'description',
-//                null,
-//                array(
-//                    'label' => 'Descripció',
-//                )
-//            )
-//            ->add(
-//                'summary',
-//                null,
-//                array(
-//                    'label' => 'Resum',
-//                )
-//            )
-//            ->add(
-//                'type',
-//                null,
-//                array(
-//                    'label'    => 'Tipus',
-//                )
-//            )
-//            ->add(
-//                'publishDate',
-//                'doctrine_orm_date',
-//                array(
-//                    'label'      => 'Data Publicació',
-//                    'field_type' =>  DatePickerType::class,
-//                )
-//            )
-//            ->add(
-//                'expirationDate',
-//                'doctrine_orm_date',
-//                array(
-//                    'label'      => 'Data Caducitat',
-//                    'field_type' =>  DatePickerType::class,
-//                )
-//            )
-//            ->add(
-//                'realizationDate',
-//                null,
-//                array(
-//                    'label'    => 'Data Realització',
-//                )
-//            )
-//            ->add(
-//                'place',
-//                null,
-//                array(
-//                    'label'    => 'Lloc',
-//                )
-//            )
-//            ->add(
-//                'video',
-//                null,
-//                array(
-//                    'label'    => 'Video',
-//                )
-//            )
-//            ->add(
-//                'startDate',
-//                'doctrine_orm_date',
-//                array(
-//                    'label'      => 'Data Inicial',
-//                    'field_type' =>  DatePickerType::class,
-//                )
-//            )
-//            ->add(
-//                'endDate',
-//                'doctrine_orm_date',
-//                array(
-//                    'label'      => 'Data Final',
-//                    'field_type' =>  DatePickerType::class,
-//                )
-//            )
-//        ;
-//    }
+    /**
+     * @param DatagridMapper $datagridMapper
+     */
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add(
+                'name',
+                null,
+                array(
+                    'label' => 'Name',
+                )
+            )
+            ->add(
+                'newsletterDate',
+                'doctrine_orm_date',
+                array(
+                    'label' => 'Data Butlletí',
+                    'field_type' => DatePickerType::class,
+                )
+            )
+            ->add(
+                'startSend',
+                'doctrine_orm_date',
+                array(
+                    'label' => 'Data Inicial Envio',
+                    'field_type' => DatePickerType::class,
+                )
+            )
+            ->add(
+                'finishSend',
+                'doctrine_orm_date',
+                array(
+                    'label' => 'Data Final Envio',
+                    'field_type' => DatePickerType::class,
+                )
+            )
+            ->add(
+                'status',
+                null,
+                array(
+                    'label' => 'Estat',
+                )
+            )
+            ->add(
+                'emailSubscribed',
+                null,
+                array(
+                    'label' => 'Emails Subscrits',
+                )
+            )
+            ->add(
+                'emailSendeds',
+                null,
+                array(
+                    'label' => 'Emails Enviats',
+                )
+            )
+            ->add(
+                'test',
+                null,
+                array(
+                    'label' => 'Test',
+                )
+            )
+            ->add(
+                'number',
+                null,
+                array(
+                    'label' => 'Número',
+                )
+            );
+    }
 
     /**
      * @param ListMapper $listMapper
@@ -339,30 +334,54 @@ class NewslettersAdmin extends AbstractBaseAdmin
                     'editable' => true,
                 )
             )
-//            ->add(
-//                'type',
-//                null,
-//                array(
-//                    'label'    => 'Tipus',
-//                    'editable' => true,
-//                )
-//            )
-//            ->add(
-//                'publishDate',
-//                null,
-//                array(
-//                    'label'  => 'Data Publicació',
-//                    'format' => 'd/m/Y',
-//                )
-//            )
-//            ->add(
-//                'place',
-//                null,
-//                array(
-//                    'label'    => 'Lloc',
-//                    'editable' => true,
-//                )
-//            )
+            ->add(
+                'newsletterDate',
+                null,
+                array(
+                    'label' => 'Data Butlletí',
+                    'format' => 'd/m/Y',
+                )
+            )
+            ->add(
+                'status',
+                null,
+                array(
+                    'label' => 'Estat',
+                    'editable' => true,
+                )
+            )
+            ->add(
+                'emailSubscribed',
+                null,
+                array(
+                    'label' => 'Emails Subscrits',
+                    'editable' => true,
+                )
+            )
+            ->add(
+                'emailSendeds',
+                null,
+                array(
+                    'label' => 'Emails Enviats',
+                    'editable' => true,
+                )
+            )
+            ->add(
+                'test',
+                null,
+                array(
+                    'label' => 'Test',
+                    'editable' => true,
+                )
+            )
+            ->add(
+                'number',
+                null,
+                array(
+                    'label' => 'Número',
+                    'editable' => true,
+                )
+            )
             ->add(
                 '_action',
                 'actions',

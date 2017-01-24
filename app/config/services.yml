@@ -48,6 +48,12 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: "Menú nivell 2", group: "Page" }
 
+    admin.newsletters:
+        class: AppBundle\Admin\NewslettersAdmin
+        arguments: [ ~, AppBundle\Entity\Newsletters, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Butlletins", group: "Page" }
+
     admin.newsletter_users:
         class: AppBundle\Admin\NewsletterUsersAdmin
         arguments: [ ~, AppBundle\Entity\NewsletterUsers, ~, "@vich_uploader.templating.helper.uploader_helper", "@liip_imagine.cache.manager" ]
