@@ -51,6 +51,14 @@ class NewslettersAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
+                'group',
+                null,
+                array(
+                    'label' => 'Grup',
+                    'required' => false,
+                )
+            )
+            ->add(
                 'newsletterDate',
                 DatePickerType::class,
                 array(
@@ -160,6 +168,13 @@ class NewslettersAdmin extends AbstractBaseAdmin
                 )
             )
             ->add(
+                'group',
+                null,
+                array(
+                    'label' => 'Grup',
+                )
+            )
+            ->add(
                 'status',
                 null,
                 array(
@@ -224,6 +239,14 @@ class NewslettersAdmin extends AbstractBaseAdmin
                 null,
                 array(
                     'label' => 'Nom',
+                    'editable' => true,
+                )
+            )
+            ->add(
+                'group',
+                null,
+                array(
+                    'label' => 'Grup',
                     'editable' => true,
                 )
             )
