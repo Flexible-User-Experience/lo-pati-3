@@ -239,7 +239,7 @@ class Newsletters extends AbstractBase
     /**
      * @param int $number
      *
-     * @return Newsletters
+     * @return $this
      */
     public function setNumber($number)
     {
@@ -259,7 +259,7 @@ class Newsletters extends AbstractBase
     /**
      * @param NewsletterGroup $group
      *
-     * @return Newsletters
+     * @return $this
      */
     public function setGroup($group)
     {

@@ -103,6 +103,7 @@ AppBundle\Entity\Newsletters:
         emailSendeds: <numberBetween()>
         test: <boolean(80)>
         number: <numberBetween(1, 10)>
+        group: @newsletterGroup*
 
 # NewsletterUsers
 AppBundle\Entity\NewsletterUsers:
