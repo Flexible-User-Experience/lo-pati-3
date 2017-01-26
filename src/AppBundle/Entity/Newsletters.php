@@ -77,6 +77,14 @@ class Newsletters extends AbstractBase
     private $number;
 
     /**
+     * @var NewsletterGroup
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\NewsletterGroup")
+     * @ORM\JoinColumn(name="group_id", referencedColumnName="id")
+     */
+    private $group;
+
+    /**
      * Methods.
      */
 
@@ -236,6 +244,26 @@ class Newsletters extends AbstractBase
     public function setNumber($number)
     {
         $this->number = $number;
+
+        return $this;
+    }
+
+    /**
+     * @return NewsletterGroup
+     */
+    public function getGroup()
+    {
+        return $this->group;
+    }
+
+    /**
+     * @param NewsletterGroup $group
+     *
+     * @return Newsletters
+     */
+    public function setGroup($group)
+    {
+        $this->group = $group;
 
         return $this;
     }
